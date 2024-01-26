@@ -5,6 +5,7 @@ import { ref, getDownloadURL } from "firebase/storage"
 const getData = async (key) => {
     try {
         console.log(key);
+
         const storageRef = ref(storage, key);
         const url = await getDownloadURL(storageRef);
         const response = await fetch(url);

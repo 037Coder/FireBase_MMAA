@@ -103,20 +103,3 @@ canvas {
 #rBox {
     color: #1e3a5f;
 }
-
-.rotate-prompt{
-    display: block;
-    box-shadow: 7px 10px 7px #213d32;
-    height: 70vw;
-    width: 70vw;
-    position: absolute;
-}
-
-.rotate-prompt-text{
-    text-align: center;
-    font-weight: 900;
-    text-transform: uppercase;
-    padding: 0;
-    position: relative;
-    padding: auto;
-}

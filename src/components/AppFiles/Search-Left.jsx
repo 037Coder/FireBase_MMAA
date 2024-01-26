@@ -17,8 +17,15 @@ const SearchLeft = ({ listOfNames, onObjectFetched }) => {
   const items = listOfNames || [];
 
   const handleNameSelect = async (name) => {
-    const inCache = sessionStorage.getItem(name);
- 
+    let inCache = false;
+    const cachedData = sessionStorage.getItem(name);
+
+    if (cachedData) {
+      // Data exists in sessionStorage
+      inCache = true;
+      console.log("Data collected from Session.Storage")
+      onObjectFetched(cachedData);
+    } else {
       try {
         const object = await getData(name);
         onObjectFetched(JSON.stringify(object));
@@ -26,7 +33,7 @@ const SearchLeft = ({ listOfNames, onObjectFetched }) => {
       } catch (error) {
         console.error('Error fetching object:', error);
       }
-    
+    }
   };
 
   return (

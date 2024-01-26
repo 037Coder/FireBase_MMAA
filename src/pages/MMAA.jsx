@@ -5,13 +5,11 @@ import Main from "./../components/AppFiles/Main";
 import RotatePrompt from "../components/AppFiles/RotatePrompt";
 
 const MMAA = () => {
-
-    const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth && window.innerWidth < 750);
+    const [showPrompt, setShowPrompt] = useState(true);
 
     useEffect(() => {
         const handleResize = () => {
-
-            setIsPortrait(window.innerHeight > window.innerWidth && window.innerWidth < 750);
+            setShowPrompt(window.innerHeight > window.innerWidth && window.innerWidth < 750);
         };
 
         // Attach the event listener
@@ -23,6 +21,17 @@ const MMAA = () => {
         };
     }, []);
 
+    useEffect(() => {
+        // Hide the prompt after 5 seconds (adjust the time as needed)
+        const timeoutId = setTimeout(() => {
+            setShowPrompt(false);
+        }, 5000); // 5000 milliseconds = 5 seconds
+
+        // Clean up the timeout on component unmount
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, []); // Empty dependency array ensures this effect runs only once on mount
 
     return (
         <>
@@ -31,13 +40,11 @@ const MMAA = () => {
 
             {/* Render the Main component */}
             <Main />
-            {isPortrait && (
-                <RotatePrompt />
-            )}
+
+            {/* Render the RotatePrompt only if showPrompt is true */}
+            {showPrompt && <RotatePrompt />}
         </>
-    )
-
-
-}
+    );
+};
 
 export default MMAA;

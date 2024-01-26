@@ -1,0 +1,24 @@
+    /* Portrait Styles */
+    @media only screen and (max-width: 768px) and (orientation: portrait) {
+
+        /* Add your specific styles for mobile portrait mode here */
+        .search {
+            min-width: 46%;
+        }
+        .middle{
+            max-width: 5%;
+        }
+    }
+
+    /* Landscape Styles */
+    @media only screen and (max-width: 1000px) and (orientation: landscape) {
+
+        /* Add your specific styles for mobile landscape mode here */
+        .search {
+            max-width: 2%;
+        }
+        .middle{
+min-width: 90%;
+        }
+
+    }

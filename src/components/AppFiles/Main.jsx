@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import './../../stylesheets/Main.css';
+import './../../stylesheets/Phone.css'
 import SearchLeft from './Search-Left';
 import SearchRight from './Search-Right';
 import Center from './Center'; // Import Center component

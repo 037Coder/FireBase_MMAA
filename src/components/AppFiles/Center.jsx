@@ -50,7 +50,7 @@ const Center = ({ rightObject, leftObject }) => {
           {/* Overall Analytics radar chart */}
             <div className="graph-content">
               <h3>Overall Analytics</h3>
-              <OverallRadarchart
+              <OverallRadarchart className='Ad-checker'
                 leftdata={leftData.Dataset?.Overall ?? []}
                 rightdata={rightData.Dataset?.Overall ?? []} />
               <BannerAdExample />
@@ -62,7 +62,7 @@ const Center = ({ rightObject, leftObject }) => {
           {/* Success Analytics radar chart */}
             <div className="graph-content">
               <h3>Success Analytics</h3>
-              <SuccessRadarchart
+              <SuccessRadarchart className='Ad-checker'
                 leftdata={leftData.Dataset?.Attack ?? []}
                 rightdata={rightData.Dataset?.Attack ?? []} />
               <BannerAdExample />
@@ -71,7 +71,7 @@ const Center = ({ rightObject, leftObject }) => {
           {/* Defence Analytics radar chart */}
             <div className="graph-content">
               <h3>Defence Analytics</h3>
-              <DefenceRadarchart
+              <DefenceRadarchart className='Ad-checker'
                 leftdata={leftData.Dataset?.Defence ?? []}
                 rightdata={rightData.Dataset?.Defence ?? []} />
               <BannerAdExample />
@@ -80,7 +80,7 @@ const Center = ({ rightObject, leftObject }) => {
           {/* Ratio Analytics radar chart */}
             <div className="graph-content">
               <h3>Ratio Analytics</h3>
-              <RatioRadarchart
+              <RatioRadarchart className='Ad-checker'
                 leftdata={leftData.Dataset?.Ratio ?? []}
                 rightdata={rightData.Dataset?.Ratio ?? []} />
               <BannerAdExample />
@@ -92,7 +92,7 @@ const Center = ({ rightObject, leftObject }) => {
           {/* Standing Analytics radar chart */}
             <div className="graph-content">
               <h3>Standing Analytics</h3>
-              <StandingRadarchart
+              <StandingRadarchart className='Ad-checker'
                 leftdata={leftData.Dataset?.Standing ?? []}
                 rightdata={rightData.Dataset?.Standing ?? []} />
               <BannerAdExample />
@@ -101,7 +101,7 @@ const Center = ({ rightObject, leftObject }) => {
           {/* Ground Analytics radar chart */}
             <div className="graph-content">
               <h3>Ground Analytics</h3>
-              <GroundRadarchart
+              <GroundRadarchart className='Ad-checker'
                 leftdata={leftData.Dataset?.Ground ?? []}
                 rightdata={rightData.Dataset?.Ground ?? []} />
               <BannerAdExample />

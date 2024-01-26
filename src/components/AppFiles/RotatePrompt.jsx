@@ -8,8 +8,12 @@ const RotatePrompt = () => {
     return (
         <>
             <div className="rotate-prompt">
-                <p className='rotate-prompt-text'>Search for your fighter
-                then rotate your device</p>
+                <p className='rotate-prompt-text'>
+                    Search in Portrait
+                </p>
+                <p className='rotate-prompt-text'>
+                    Analyze in Landscape
+                </p>
             </div>
         </>
     )

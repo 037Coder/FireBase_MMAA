@@ -18,7 +18,7 @@ const BucketList = ({ onNamesLoaded }) => {
                                 name: name,
                                 url: url,
                             };
-                        })
+                           })
                     );
                     onNamesLoaded(list); // Call onNamesLoaded with the updated list
                     //console.log(list); 
@@ -33,7 +33,6 @@ const BucketList = ({ onNamesLoaded }) => {
 
     }, []); // Empty dependency array to run only once when the component mounts
 
-    // Rest of your component
 };
 
 export default BucketList;
