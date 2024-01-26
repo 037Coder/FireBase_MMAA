@@ -1,0 +1,122 @@
+.center {
+    text-align: center;
+    width: 98%;
+    margin: 0;
+    padding: 2px;
+    align-items: center;
+    background-image: url("./../Logo Round_p-1.png");
+    background-color: black;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.graph-container {
+    width: 100%;
+    height: auto;
+
+}
+
+.Ad-Space {
+    display: block;
+    background-color: red;
+    opacity: 0%;
+    width: auto;
+    margin: auto;
+    height: 70vh;
+}
+
+.graph-content {
+    margin: 10vh auto 10vh auto;
+    background-color: #f7fcfae6;
+    width: 95%;
+    border-radius: 2%;
+    padding: 5vh 1px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chart {
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+    /* 1:1 Aspect Ratio */
+    position: relative;
+    /* If you want text inside of it */
+    padding-bottom: 0;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 90vh;
+    width: 98%;
+    margin: 0;
+}
+
+.record_box {
+    display: block;
+    margin: auto;
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Black Ops One';
+    font-size: 3vw;
+    padding-bottom: 0.75vh;
+}
+
+.name_box {
+    display: block;
+    margin: auto;
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Black Ops One';
+    font-size: 3vw;
+    line-height: 0.7em;
+    text-align: center;
+    width: 50%;
+    padding-bottom: 0.7vh;
+}
+
+.infobox-container {
+    width: 100%;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    padding-top: 1em;
+}
+
+#lBox {
+    color: #b22828;
+}
+
+#rBox {
+    color: #1e3a5f;
+}
+
+.rotate-prompt{
+    display: block;
+    box-shadow: 7px 10px 7px #213d32;
+    height: 70vw;
+    width: 70vw;
+    position: absolute;
+}
+
+.rotate-prompt-text{
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 0;
+    position: relative;
+    padding: auto;
+}

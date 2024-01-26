@@ -1,0 +1,66 @@
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+}
+
+.search{
+    width:20%;
+    background-color: #E7F1ED;
+    margin: 0;
+    display: block;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-evenly;
+    /*height: 100vh;*/
+}
+
+.Ad_cotainer{
+    position: absolute;
+    display: block;
+    align-items: center;
+    text-align: center;
+    align-self:center;
+    z-index: 0;
+}
+
+.Side-Ad{
+    max-height: 80vh;
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    z-index: -0;
+}
+
+.Banner_Ad_container{
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.Banner-Ad{
+    max-width: 99%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.middle{
+    padding-top: 0.5vh;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0;
+    background-color: white;
+    align-items: center;
+    overflow-y: scroll;
+    height: 100%;
+}
+

@@ -1,0 +1,12 @@
+
+.logo_image{
+    align-self: center;
+    height: 100%;
+    max-width: 100px;
+    width: auto;
+    border-radius: 80px;
+    box-shadow: 3px 2px 5px black;
+    background-color:transparent;
+    margin: 0;
+    padding: 0;
+}

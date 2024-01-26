@@ -1,0 +1,33 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url('./Logo Round_p-1.png');
+  background-position: center;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-color: whitesmoke;
+}
+
+.rotate-prompt{
+  background-color: #fffffff7;
+  color: #3a8869;
+  width: 95%;
+  height: auto;
+  margin: auto;
+  padding: auto;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  border-width: 0.2em;
+  border-style: solid;
+  border-color: #3a8869;
+  box-shadow:#3a8869;
+}

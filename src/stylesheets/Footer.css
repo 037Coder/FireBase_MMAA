@@ -1,0 +1,40 @@
+footer{
+    width: 100%;
+    background-color: #051e15;
+    margin: 0;
+    padding: 0;
+    border-top: 0.5vh solid #3a8869;
+}
+
+.footer{
+    height: 98%;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.footer-menu{
+    font-size: 14px;
+    width: 10vw;
+}
+
+.footer-menu:hover{
+    color: white;
+}
+
+.legal-info{
+    background-color: #3a8869;
+    height: 10px;
+    width: 100%;
+}
+
+.legal-info-text{
+    font-size: 6px;
+    color: whitesmoke;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
