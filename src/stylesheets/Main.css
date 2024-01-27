@@ -67,10 +67,12 @@ main {
 
 
 .rotate-prompt {
-    
+    top: 400px;
+    float: right;
     display: block;
     box-shadow: 7px 10px 7px #213d32;
     width: 65%;
+    height: fit-content;
 }
 
 .rotate-prompt-text {

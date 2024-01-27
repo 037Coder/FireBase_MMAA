@@ -1,13 +1,28 @@
+.page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-color: whitesmoke;
+    align-items: center;
+}
+
 .information-section {
     background-color: #daf7ecf2;
     margin: auto;
     padding: 1vh 5vw;
-
     min-height: 80vh;
-    overflow-y: scroll;
-    text-align: center;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    margin: 0;
+    max-width: 700px;
+    border-left: 1px solid #3a8869;
+    border-right: 1px solid #3a8869;
 }
 
 .spacer {
@@ -22,6 +37,9 @@
     height: 4vh;
 }
 
+#calc-page{
+}
+
 table {
     align-self: center;
     width: fit-content;
@@ -34,13 +52,13 @@ tr {
 }
 
 td {
-    font-size: 18px;
+    font-size: 16px;
     padding: 5px;
 }
 
 .td-right {
     text-align: left;
-    border-left: 2px solid #3a8869;
+    border-left: 3px solid #3a8869;
 
 }
 

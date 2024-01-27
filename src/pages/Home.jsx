@@ -10,7 +10,7 @@ import LogoButton from '../shared/logo-button';
 
 const Home = () => {
     return (
-        <div>
+        <div className="page-container">
             <Header />
             <div className='information-section'>
                 <h1>Welcome to MMAAnalytica</h1>
@@ -31,6 +31,10 @@ const Home = () => {
                     We prioritize a fighter's recent performance, focusing on the
                     last 5 fights to provide a real-time snapshot of their
                     abilities.
+                </p>
+                <p>
+                    <strong>Comnpare Fighters: </strong>
+                    Compare athlete form statistics with their peers and the legends.
                 </p>
                 <Spacer />
                 <h2>For Pundits, Fans, Athletes, and Coaches</h2>

@@ -12,6 +12,7 @@ import Contact from './pages/Contact'
 import Calculations from './pages/Calculations';
 import Disclaimer from './pages/Disclaimer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CookieConsent from './shared/CookieConsent';
 
 /**
  * The main App component.
@@ -37,6 +38,7 @@ function App() {
           </Routes>
         </div>
       </Router>
+      <CookieConsent />
     </>
   );
 }

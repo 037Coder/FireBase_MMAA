@@ -11,7 +11,7 @@ import LogoButton from '../shared/logo-button';
 
 const About = () => {
   return (
-    <div>
+    <div className="page-container">
       <Header />
       <div className="information-section">
         <h1>About Us</h1>

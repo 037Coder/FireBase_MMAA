@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 const BucketList = ({ onNamesLoaded }) => {
     const listRef = ref(storage, 'MMAA_Fighters');
-
+/*
     useEffect(() => {
         listAll(listRef)
             .then(async (res) => {
@@ -32,7 +32,7 @@ const BucketList = ({ onNamesLoaded }) => {
             
 
     }, []); // Empty dependency array to run only once when the component mounts
-
+*/
 };
 
 export default BucketList;

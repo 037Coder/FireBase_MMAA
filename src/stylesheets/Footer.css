@@ -1,5 +1,5 @@
 footer{
-    width: 100%;
+    width: 100vw;
     background-color: #051e15;
     margin: 0;
     padding: 0;
@@ -26,12 +26,12 @@ footer{
 
 .legal-info{
     background-color: #3a8869;
-    height: 10px;
+    height: 13px;
     width: 100%;
 }
 
 .legal-info-text{
-    font-size: 6px;
+    font-size: 12px;
     color: whitesmoke;
     text-align: center;
     width: 100%;

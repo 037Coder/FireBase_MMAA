@@ -4,7 +4,7 @@ html,
 body {
     margin: 0;
     height: fit-content;
-    width: 100%;
+    width: 100vw;
     padding: 0;
 }
 
@@ -26,6 +26,7 @@ h2 {
     font-display: swap;
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Chakra Petch';
+    text-align: center;
 }
 
 h3 {
@@ -34,6 +35,7 @@ h3 {
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Chakra Petch';
     font-weight: 200;
+    text-align: center;
 }
 
 p {
@@ -44,43 +46,42 @@ p {
 }
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
     p {
-        font-size: 30px;
-        padding: 0 8vw;
+        font-size: 26px;
+        padding: 0 5px;
     }
 
     h1 {
-        font-size: 50px;
+        font-size: 45px;
         letter-spacing: -2px;
     }
 
     h2 {
-        font-size: 32px;
-        letter-spacing: 10px;
+        font-size: 30px;
+        letter-spacing: 1.5vw;
     }
 
     h3 {
-        font-size: 30px;
+        font-size: 28px;
         margin: 0;
     }
 }
 
-@media only screen and (min-width: 1001px) {
-    p {
-        font-size: 24px;
-        margin: 0 150px;
+@media only screen and (min-width: 901px) {
+    h1 {
+        font-size: 60px;
     }
 
     h2 {
-        font-size: 40px;
-    }
-
-    h1 {
-        font-size: 80px;
+        font-size: 28px;
     }
 
     h3 {
-        font-size: 30px;
+        font-size: 24px;
+    }
+    
+    p {
+        font-size: 18px;
     }
 }

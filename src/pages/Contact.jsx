@@ -7,7 +7,7 @@ import LogoButton from '../shared/logo-button';
 
 const Contact = () => {
   return (
-    <div>
+    <div className="page-container">
       <Header />
       <div className="information-section">
         <form>

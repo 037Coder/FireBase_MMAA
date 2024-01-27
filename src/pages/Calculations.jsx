@@ -9,14 +9,81 @@ import { Link } from 'react-router-dom'
 
 const Calculations = () => {
     return (
-        <>
+        <div className="page-container">
             <Header />
-            <div className="information-section">
+            <div className="information-section" id="calc-page">
                 <h1>Calculations</h1>
                 <h2>Data Source</h2>
                 <p><Link to={'http://ufcstats.com/statistics/events/completed'}>UFCstats.com</Link>: Information about fighters and their last 5 fights is scraped
                     from the official UFC website.
                 </p>
+                <Spacer />
+                <h2>Data Points:</h2>
+                <h3>Labels</h3>
+                <MiniSpacer />
+                <table>
+                    <tbody>
+                        <tr>
+                            <td className='td-left'>kd</td>
+                            <td className='td-right'>Knockdowns</td>
+                        </tr>
+                        <tr>
+                            <td className='td-left'>Td</td>
+                            <td className='td-right'>Takedowns</td>
+                        </tr>
+                        <tr>
+                            <td className='td-left'>SS / SigStr</td>
+                            <td className='td-right'>Significant Strikes</td>
+                        </tr>
+                        <tr>
+                            <td className='td-left'>Ctrl</td>
+                            <td className='td-right'>Control</td>
+                        </tr>
+                        <tr>
+                            <td className='td-left'>Head</td>
+                            <td className='td-right'>Strikes to the Head</td>
+                        </tr>
+                        <tr>
+                            <td className='td-left'>Body</td>
+                            <td className='td-right'>Strikes to the Body</td>
+                        </tr>
+                        <tr>
+                            <td className='td-left'>Legs</td>
+                            <td className='td-right'>Strikes to the Legs</td>
+                        </tr>
+                        <tr>
+                            <td className='td-left'>Dist</td>
+                            <td className='td-right'>Strikes from Distance</td>
+                        </tr>
+                        <tr>
+                            <td className='td-left'>Clnch</td>
+                            <td className='td-right'>Strikes in Clinch</td>
+                        </tr>
+                        <tr>
+                            <td className='td-left'>Grnd</td>
+                            <td className='td-right'>Strikes on Ground</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <Spacer />
+                <h3>Calcultions:</h3>
+                <MiniSpacer />
+                <table>
+                    <tbody>
+                        <tr>
+                            <td className='td-left'>Suc</td>
+                            <td className='td-right'>Success</td>
+                        </tr>
+                        <tr>
+                            <td className='td-left'>Def</td>
+                            <td className='td-right'>Defense</td>
+                        </tr>
+                        <tr>
+                            <td className='td-left'>Rat</td>
+                            <td className='td-right'>Ratio</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <Spacer />
                 <h2>Calculation Methods:</h2>
                 <h3>Strike Success:</h3>
@@ -36,7 +103,7 @@ const Calculations = () => {
                 <MiniSpacer />
                 <h3>Defensive Metrics:</h3>
 
-                <p><strong>Data Points:</strong> Significant Strikes, Total sStrikes, Takedowns, Head, Body, Legs, Distance, Clinch,
+                <p><strong>Data Points:</strong> Significant Strikes, Total Strikes, Takedowns, Head, Body, Legs, Distance, Clinch,
                     Ground
                 </p>
                 <p><strong>Calculation:</strong> 1 - (Strikes Absorbed / Strikes Received)</p>
@@ -64,7 +131,7 @@ const Calculations = () => {
                 <Spacer />
             </div>
             <Footer />
-        </>
+        </div>
     );
 }
 

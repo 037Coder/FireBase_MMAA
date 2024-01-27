@@ -16,12 +16,12 @@ import LogoButton from './../shared/logo-button'; // Import LogoButton component
 const Footer = () => {
   return (
     // Footer element with a specified class name
-    <footer>
+    <footer>{/** 
       <div className='footer'>
       <Link to="/"><p className='footer-menu'>Home</p></Link>
       <Link to="/disclaimer"><p className='footer-menu'>Disclaimer</p></Link>
       <Link to="/calculations"><p className='footer-menu'>Calculations</p></Link>
-      </div>
+      </div>*/}
       <div className='legal-info'>
         <p className='legal-info-text'>Copyright 2024 MMAAnalytica.com LLC.</p>
       </div>
