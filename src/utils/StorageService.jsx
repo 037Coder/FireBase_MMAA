@@ -3,7 +3,7 @@ import { storage } from "./StorageConfig"
 import { ref, getDownloadURL } from "firebase/storage"
 
 const getData = async (key) => {
-  /*  try {
+    try {
         console.log(key);
 
         const storageRef = ref(storage, key);
@@ -16,7 +16,7 @@ const getData = async (key) => {
 
     } catch (error) {
         console.error("Error in StorageService: " + error);
-    }*/
+    }
 }
 
 export default getData;
