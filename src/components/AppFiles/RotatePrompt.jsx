@@ -1,6 +1,5 @@
 import React from 'react';
 import './../../stylesheets/Main.css'
-import Header from '../../shared/Header';
 
 const RotatePrompt = () => {
 

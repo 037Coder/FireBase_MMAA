@@ -2,7 +2,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 100vh;
+    height: 92.5vh;
     width: 100vw;
 }
 
@@ -27,6 +27,14 @@ main {
     overflow: hidden;
     justify-content: space-evenly;
     /*height: 100vh;*/
+}
+
+#search-left{
+    border-radius: 10px solid red;
+}
+
+#search-right{
+    border-radius: 10px solid blue;
 }
 
 .Ad_cotainer {
@@ -64,17 +72,6 @@ main {
 }
 
 
-
-
-.rotate-prompt {
-    top: 400px;
-    float: right;
-    display: block;
-    box-shadow: 7px 10px 7px #213d32;
-    width: 65%;
-    height: fit-content;
-}
-
 .rotate-prompt-text {
     text-align: center;
     font-weight: 900;
@@ -82,3 +79,31 @@ main {
     font-size: 22px;
     padding: auto;
 }
+
+
+.rotate-prompt{
+    background-color: #fffffff7;
+    color: #3a8869;
+    width: 95%;
+    height: auto;
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3a8869;
+    box-shadow:#3a8869;
+  }
+  
+  @media only screen and (min-width: 1000px) {
+    .rotate-prompt{
+      display: none;
+    }
+  }

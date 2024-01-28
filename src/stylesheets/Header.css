@@ -2,8 +2,8 @@ header{
     height: 7vh;
     width: 100vw;
     background-color: #3a8869;
-    margin: auto;
-    padding: auto;
+    margin: 0;
+    padding: 2px;
     display: flex;
     flex-direction: row;
     align-items: center;

@@ -1,5 +1,5 @@
 // Import necessary libraries and components
-import React, { useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 // Import styles for the Center component
 import './../../stylesheets/Center.css';
@@ -35,14 +35,30 @@ const Center = ({ rightObject, leftObject }) => {
   const rightData = rightObject ? JSON.parse(rightObject) : {};
   //console.log(leftData);
   //console.log(rightData);
+
+  const centerRef = useRef();
+
+  useEffect(() => {
+    // Scroll to the top when leftObject or rightObject is updated
+    window.scrollTo(
+      {
+        top: centerRef.offSetTop,
+        left: 0,
+        behaviour: "smooth",
+      }
+    )
+  }, [leftData, rightData]);
+
+
+
   return (
     // Main container for the central content of the application
-    <div className="center">
+    <div className="center"> 
       <div className="graph-container">
           {/* List of content containers */}
           <div className="graph-content-list">
           {/* InfoBox component displaying information about the data */}
-            <div className="graph-content">
+            <div className="graph-content" ref={centerRef}>
               <InfoBox leftdata={leftData} rightdata={rightData} />
               <BannerAdExample />
             </div>

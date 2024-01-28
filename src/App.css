@@ -1,24 +1,3 @@
 .App {
-  
-}
-
-.rotate-prompt{
-  background-color: #fffffff7;
-  color: #3a8869;
-  width: 95%;
-  height: auto;
-  margin: auto;
-  padding: auto;
-  text-align: center;
   align-items: center;
-  position: absolute;
-  z-index: 1;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 20px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #3a8869;
-  box-shadow:#3a8869;
 }

@@ -26,7 +26,7 @@ function App() {
     <>
       {/* Main container for the entire app */}
       <Router>
-
+        <CookieConsent />
         <div className="App">
           <Routes>
             <Route path="/" exact Component={Home} />
@@ -38,7 +38,7 @@ function App() {
           </Routes>
         </div>
       </Router>
-      <CookieConsent />
+
     </>
   );
 }

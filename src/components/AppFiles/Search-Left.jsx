@@ -46,7 +46,7 @@ const SearchLeft = ({ listOfNames, onObjectFetched }) => {
       >
         {({ getInputProps, getItemProps, getMenuProps, isOpen, inputValue, highlightedIndex, selectedItem }) => (
           <div className="input-wrapper">
-            <FaSearch className="search-icon" id='search-icon-right' />
+            <FaSearch className="search-icon" id='search-icon-left' />
 
             <input
               {...getInputProps({
