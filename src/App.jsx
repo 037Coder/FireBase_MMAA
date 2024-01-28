@@ -1,18 +1,16 @@
 // Import the 'useState' hook from the 'react' library
-import { useState } from 'react';
+import { lazy, Suspense } from 'react';
 
 // Import CSS styles for the 'App' component
 import './App.css';
 
-// Import the 'Header', 'Footer', and 'Main' components
-import MMAA from './pages/MMAA'
-import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Calculations from './pages/Calculations';
-import Disclaimer from './pages/Disclaimer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import CookieConsent from './shared/CookieConsent';
+// Use React.lazy to lazily import your components
+const Home = lazy(() => import('./pages/Home'));
+const MMAA = lazy(() => import('./pages/MMAA'));
+const About = lazy(() => import('./pages/About'));
+const Calculations = lazy(() => import('./pages/Calculations'));
+const Disclaimer = lazy(() => import('./pages/Disclaimer'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 /**
  * The main App component.
@@ -28,14 +26,17 @@ function App() {
       <Router>
         <CookieConsent />
         <div className="App">
-          <Routes>
-            <Route path="/" exact Component={Home} />
-            <Route path='/mmaa' Component={MMAA} />
-            <Route path='/about' Component={About} />
-            <Route path='/calculations' Component={Calculations} />
-            <Route path='/disclaimer' Component={Disclaimer} />
-            <Route path='/contact' Component={Contact} />
-          </Routes>
+          {/* Wrap Routes in a Suspense component */}
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/mmaa" element={<MMAA />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/calculations" element={<Calculations />} />
+              <Route path="/disclaimer" element={<Disclaimer />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </Suspense>
         </div>
       </Router>
 
