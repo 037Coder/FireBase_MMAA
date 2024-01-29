@@ -1,5 +1,5 @@
     /* Portrait Styles */
-    @media only screen and (max-width: 768px) and (orientation: portrait) {
+    @media only screen and (max-width: 600px) and (orientation: portrait) {
 
         /* Add your specific styles for mobile portrait mode here */
         .search {
@@ -12,7 +12,7 @@
     }
 
     /* Landscape Styles */
-    @media only screen and (max-width: 950px) and (orientation: landscape) {
+    @media only screen and (max-width: 1000px) and (orientation: landscape) {
 
         /* Add your specific styles for mobile landscape mode here */
         .search {

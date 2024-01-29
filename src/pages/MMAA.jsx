@@ -5,11 +5,14 @@ import Main from "./../components/AppFiles/Main";
 import RotatePrompt from "../components/AppFiles/RotatePrompt";
 
 const MMAA = () => {
-    const [showPrompt, setShowPrompt] = useState(true);
+    const [showPrompt, setShowPrompt] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
-            setShowPrompt(window.innerHeight > window.innerWidth && window.innerWidth < 750);
+            setShowPrompt(window.innerWidth < 601 || 
+                (window.innerHeight < 
+                    window.innerWidth && 
+                    window.Width <950));
         };
 
         // Attach the event listener
