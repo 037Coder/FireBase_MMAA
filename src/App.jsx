@@ -1,6 +1,7 @@
 // Import the 'useState' hook from the 'react' library
 import { lazy, Suspense } from 'react';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CookieConsent from './shared/CookieConsent';
 // Import CSS styles for the 'App' component
 import './App.css';
 
