@@ -24,18 +24,6 @@ const MMAA = () => {
         };
     }, []);
 
-    useEffect(() => {
-        // Hide the prompt after 5 seconds (adjust the time as needed)
-        const timeoutId = setTimeout(() => {
-            setShowPrompt(false);
-        }, 3500); // 5000 milliseconds = 5 seconds
-
-        // Clean up the timeout on component unmount
-        return () => {
-            clearTimeout(timeoutId);
-        };
-    }); // Empty dependency array ensures this effect runs only once on mount
-
     return (
         <div className="page-container">
             {/* Render the Header component if the window height is greater than 450 pixels */}
