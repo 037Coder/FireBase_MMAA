@@ -12,7 +12,7 @@
     }
 
     /* Landscape Styles */
-    @media only screen and (max-width: 1000px) and (orientation: landscape) {
+    @media only screen and (max-width > max-height) and (max-width: 1000px) and (orientation: landscape) {
 
         /* Add your specific styles for mobile landscape mode here */
         .search {
