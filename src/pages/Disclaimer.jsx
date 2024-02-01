@@ -81,6 +81,34 @@ const Disclaimer = () => {
                 <Spacer />
                 {/* Display the logo button */}
                 <LogoButton />
+                <Spacer id="cookie-policy" />
+
+                <h1>Cookie Policy</h1>
+
+                <p>This website uses cookies to enhance your experience. Cookies are small files stored on your computer that help us
+                    analyze site usage and improve performance.</p>
+
+                <h2>How We Use Cookies</h2>
+                <ul id="disclaimerlist">
+                    <li>
+                        <p><strong>Analytics Cookies:</strong> These cookies help us analyze how users interact with our website. The information
+                            collected is anonymous and is used to improve the performance of our website.</p>
+                    </li>
+                    <li>
+                        <p><strong>Preference Cookies:</strong> These cookies are used to store user preferences, such as cookie consent and
+                            preferences chosen by the user on the website.</p>
+                    </li>
+                    <li>
+                        <p><strong>Session Storage:</strong> We use session storage to store temporary data, such as objects retrieved from external
+                            Storage, to enhance the user experience during a session.</p>
+                    </li>
+                </ul>
+
+                <h2>Disabling Cookies</h2>
+
+                <p>You can disable cookies in your browser settings, but it may affect site functionality. We recommend leaving
+                    cookies enabled for a better experience.</p>
+                <LogoButton />
                 <Spacer />
                 <Spacer />
             </div>

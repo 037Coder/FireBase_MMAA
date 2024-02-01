@@ -65,3 +65,10 @@ td {
     text-transform: uppercase;
     font-weight: bolder;
 }
+
+#disclaimerlist{
+    border:none;
+    background: none;
+    box-shadow: none;
+    margin: 0px 0px 5vh 2vw;
+}

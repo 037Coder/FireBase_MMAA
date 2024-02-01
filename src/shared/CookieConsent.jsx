@@ -1,21 +1,42 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import "./../stylesheets/CookieConsent.css"
 
 const CookieConsent = () => {
     const [accepted, setAccepted] = useState(false);
+    const [analyticsEnabled, setAnalyticsEnabled] = useState(true);
+    const [rememberChoice, setRememberChoice] = useState(true);
 
     const handleAccept = () => {
-        // Set a cookie or update state to mark user's acceptance
+        // Set cookies or update state to mark user's choices
         setAccepted(true);
-        localStorage.setItem("cookieConsent", "accepted")
+        if (rememberChoice) {
+            localStorage.setItem("cookieConsent", JSON.stringify({
+                accepted: true,
+                analyticsEnabled,
+                rememberChoice
+            }))
+        }
+        ;
+    };
+
+    const handleAnalyticsToggle = () => {
+        setAnalyticsEnabled(!analyticsEnabled);
+    };
+
+    const handleRememberChoiceToggle = () => {
+        setRememberChoice(!rememberChoice);
     };
 
     useEffect(() => {
-        // Check if the user has previously accepted the cookie policy
+        // Check if the user has previously accepted the cookie policy and retrieve saved choices
         const localStorageValue = localStorage.getItem("cookieConsent");
 
-        if (localStorageValue === "accepted") {
-            setAccepted(true);
+        if (localStorageValue) {
+            const { accepted, analyticsEnabled, rememberChoice } = JSON.parse(localStorageValue);
+            setAccepted(accepted);
+            setAnalyticsEnabled(analyticsEnabled);
+            setRememberChoice(rememberChoice);
         }
     }, []); // Empty dependency array ensures this effect runs only once when the component mounts
 
@@ -24,13 +45,40 @@ const CookieConsent = () => {
         return null;
     }
 
-
     return (
         <div id="cookie-policy-prompt" style={{ display: accepted ? 'none' : 'block' }}>
-            <p className="cookie-text">We use non-evasive Cookies to speed up the use of the website.</p>
-            <p className="cookie-text">We use third-party applications such as Google AdSense that may access and store values on your machine</p>
-            <p className="cookie-text">By using this website, you consent to the use of cookies.</p>
-            <button onClick={handleAccept}>Accept</button>
+            <h1>Cookie Consent</h1>
+            <table id="consent-table">
+                <tbody>
+                    <tr>
+                        <td>Anonymous analytics for performance</td>
+                        <td>
+                            <label className="switch">
+                                <input type="checkbox" checked={analyticsEnabled} onChange={handleAnalyticsToggle} />
+                                <span className="slider round"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Remember my Cookies choice</td>
+                        <td>
+                            <label className="switch">
+                                <input type="checkbox" checked={rememberChoice} onChange={handleRememberChoiceToggle} />
+                                <span className="slider round"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colSpan="2">Temporary data is stored for website functionality.</td>
+                    </tr>
+                    <tr>
+                        <td colSpan="2"><Link to="/disclaimer#cookie-policy">More information here</Link></td>
+                    </tr>
+                    <tr>
+                        <td colSpan="2"><button onClick={handleAccept}>Save</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     );
 };
