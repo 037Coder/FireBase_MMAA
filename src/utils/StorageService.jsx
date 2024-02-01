@@ -19,7 +19,6 @@ const getData = async (key) => {
     const response = await fetch(url);
     // Parse the response as JSON
     const data = await response.json();
-    //console.log(data);
     return data;
   } catch (error) {
     console.error("Error in StorageService: " + error);

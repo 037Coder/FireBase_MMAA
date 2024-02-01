@@ -19,7 +19,9 @@ const options = {
           // Color of the ticks in the radar chart
           color: offWhite,
           // Background color of the ticks in the radar chart
-          backdropColor: primaryGreen + 'b3'
+          backdropColor: primaryGreen + 'b3',
+          // begin all ticks at Zero
+          beginAtZero: true
         },
         pointLabels: {
           // Font settings for the point labels in the radar chart
