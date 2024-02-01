@@ -1,4 +1,5 @@
 // Import necessary components and styles
+import React, { useEffect} from 'react';
 import Header from './../shared/Header';
 import Footer from './../shared/Footer';
 import './../stylesheets/Pages.css';
