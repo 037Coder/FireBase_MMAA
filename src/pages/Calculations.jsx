@@ -5,6 +5,7 @@ import './../stylesheets/Pages.css';
 import { Spacer, MiniSpacer } from './../shared/Spacer';
 import LogoButton from '../shared/logo-button';
 import { Link } from 'react-router-dom'
+import { logPageVisit } from "../utils/StorageConfig";
 
 /**
  * About component for displaying information about the application.
@@ -12,6 +13,10 @@ import { Link } from 'react-router-dom'
  * @returns {JSX.Element} - About component JSX.
  */
 const Calculations = () => {
+
+    useEffect(() => {
+        logPageVisit('Calculations')
+    }, [])
     return (
         <div className="page-container">
             <Header />

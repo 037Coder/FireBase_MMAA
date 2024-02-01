@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getStorage } from 'firebase/storage';
+import { getAnalytics, logEvent } from 'firebase/analytics'
 
 // config
 const firebaseConfig = {
@@ -16,4 +17,18 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // Create storage container
 const storage = getStorage(app);
-export { storage };
+// Create Analytics container
+const analytics = getAnalytics(app)
+// Create logPageVisit
+const logPageVisit = (pageName) => {
+  logEvent(analytics, 'page_visit', {
+    pageName: pageName,
+  })
+}
+// Create logSearchEvent 
+const logSearchEvent = (searchItem) => {
+  logEvent(analytics, 'search', {
+    search_term: searchItem,
+  })
+}
+export { storage, logPageVisit, logSearchEvent };

@@ -5,6 +5,7 @@ import { FaSearch } from 'react-icons/fa';
 import './../../stylesheets/Search.css';
 import Adspace from './../Ads/Side-Adspace'; // Assuming you have an Adspace component
 import getData from './../../utils/StorageService';
+import { logSearchEvent } from '../../utils/StorageConfig';
 
 /**
  * SearchRight component for displaying a list of names and handling name selection.
@@ -25,6 +26,7 @@ const SearchRight = ({ listOfNames, onObjectFetched }) => {
   const handleNameSelect = async (name) => {
     let inCache = false;
     const cachedData = sessionStorage.getItem(name);
+    logSearchEvent(name)
     
     if (cachedData) {
       // Data exists in sessionStorage

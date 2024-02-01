@@ -102,7 +102,7 @@ main {
     box-shadow:#3a8869;
   }
   
-  @media only screen and (min-width: 1000px) {
+  @media only screen and (min-width: 600px) {
     .rotate-prompt{
       display: none;
     }

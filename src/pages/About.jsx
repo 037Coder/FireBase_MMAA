@@ -6,6 +6,7 @@ import Footer from './../shared/Footer';
 import { Spacer, MiniSpacer } from '../shared/Spacer';
 import LogoButton from '../shared/logo-button';
 import './../stylesheets/Pages.css';
+import { logPageVisit } from "../utils/StorageConfig";
 
 /**
  * About component for displaying information about the application.
@@ -13,6 +14,11 @@ import './../stylesheets/Pages.css';
  * @returns {JSX.Element} - About component JSX.
  */
 const About = () => {
+
+  useEffect(() => {
+    logPageVisit('About')
+  }, [])
+
   return (
     <div className="page-container">
       {/* Display the header of the page */}

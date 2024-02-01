@@ -3,6 +3,7 @@ import { React, useState, useEffect } from "react";
 import Header from "./../shared/Header";
 import Main from "./../components/AppFiles/Main";
 import RotatePrompt from "../components/AppFiles/RotatePrompt";
+import { logPageVisit } from "../utils/StorageConfig";
 
 /**
  * MMAA (MMA Analytica App) component for rendering the main application content.
@@ -30,6 +31,10 @@ const MMAA = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    useEffect(() => {
+        logPageVisit('App')
+    }, [])
 
     return (
         <div className="page-container">

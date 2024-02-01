@@ -1,11 +1,12 @@
 // Import necessary components and styles
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './../shared/Header';
 import Footer from './../shared/Footer';
 import './../stylesheets/Pages.css';
 import { Spacer } from '../shared/Spacer';
 import LogoButton from '../shared/logo-button';
+import { logPageVisit } from '../utils/StorageConfig';
 
 /**
  * Home component for displaying the home page content.
@@ -13,6 +14,12 @@ import LogoButton from '../shared/logo-button';
  * @returns {JSX.Element} - Home component JSX.
  */
 const Home = () => {
+
+    useEffect(() => {
+        logPageVisit('HomePage')
+    }, [])
+
+
     return (
         <div className="page-container">
             {/* Display the header of the page */}
