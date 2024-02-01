@@ -13,7 +13,6 @@ const BucketList = ({ onNamesLoaded }) => {
                         res.items.map(async (itemRef) => {
                             const name = itemRef.name;
                             const url = await itemRef.fullPath;
-
                             return {
                                 name: name,
                                 url: url,

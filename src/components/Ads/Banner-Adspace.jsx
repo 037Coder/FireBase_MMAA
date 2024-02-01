@@ -1,7 +1,4 @@
-// Import necessary libraries and components
 import React from 'react';
-
-// Import styles for the BannerAdExample component
 import './../../stylesheets/Main.css';
 
 /**
@@ -9,7 +6,7 @@ import './../../stylesheets/Main.css';
  * @function BannerAdExample
  * @returns {JSX.Element} The rendered BannerAdExample component.
  */
-const BannerAdExample = () => {
+const BannerAdspace = () => {
   return (
     // Container for the banner ad
     <div className='Banner_Ad_container'>
@@ -30,4 +27,4 @@ const BannerAdExample = () => {
 }
 
 // Export the BannerAdExample component as the default export
-export default BannerAdExample;
+export default BannerAdspace;

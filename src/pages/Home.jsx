@@ -1,19 +1,27 @@
-
-// Import the 'Header', 'Footer', and Stylesheet
+// Import necessary components and styles
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from './../shared/Header';
 import Footer from './../shared/Footer';
 import './../stylesheets/Pages.css';
-import { Link } from 'react-router-dom';
 import { Spacer } from '../shared/Spacer';
 import LogoButton from '../shared/logo-button';
 
-
+/**
+ * Home component for displaying the home page content.
+ * @function Home
+ * @returns {JSX.Element} - Home component JSX.
+ */
 const Home = () => {
     return (
         <div className="page-container">
+            {/* Display the header of the page */}
             <Header />
+
+            {/* Main content section with information about the application */}
             <div className='information-section'>
                 <h1>Welcome to MMAAnalytica</h1>
+                {/* Display the logo button */}
                 <LogoButton />
                 <h3><Link to="/mmaa">The App</Link></h3>
                 <h2>Compare MMA Fighters Like Never Before</h2>
@@ -33,7 +41,7 @@ const Home = () => {
                     abilities.
                 </p>
                 <p>
-                    <strong>Comnpare Fighters: </strong>
+                    <strong>Compare Fighters: </strong>
                     Compare athlete form statistics with their peers and the legends.
                 </p>
                 <Spacer />
@@ -57,17 +65,23 @@ const Home = () => {
                     <strong>Explore <Link to="/mmaa">the App</Link>: </strong>
                     Dive into the world of MMA analysis by checking out our app.
                 </p>
+                {/*
                 <p>    <strong>Support on IndieGogo: </strong>
                     Support our mission on INDIEGOGO. Your contributions help us enhance and expand our offerings.
-                </p>
+                </p> 
+                */}
                 <Spacer />
+                {/* Display the logo button */}
                 <LogoButton />
                 <Spacer />
                 <Spacer />
             </div>
+
+            {/* Display the footer of the page */}
             <Footer />
         </div>
     );
 }
 
+// Export the Home component as the default export
 export default Home;

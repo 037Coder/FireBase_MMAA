@@ -1,13 +1,12 @@
-
+// Import necessary components and stylesheets
 import React, { useState } from 'react';
 import './../../stylesheets/Main.css';
 import './../../stylesheets/Phone.css'
 import SearchLeft from './Search-Left';
 import SearchRight from './Search-Right';
-import Center from './Center'; // Import Center component
+import Center from './Center';
 import ListAllObjects from '../../utils/BucketList';
 import { Link } from 'react-router-dom';
-
 
 
 /**
@@ -19,6 +18,7 @@ const Main = () => {
   // State to manage the list of names
   const [list, setList] = useState([]);
 
+  // State to manage leftObject and rightObject respectively
   const [leftObject, setLeftObject] = useState(null);
   const [rightObject, setRightObject] = useState(null);
 

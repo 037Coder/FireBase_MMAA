@@ -1,21 +1,28 @@
+// Import necessary components
 import { React, useState, useEffect } from "react";
-//import Footer from "./../shared/Footer"; //Application Footer removed 
 import Header from "./../shared/Header";
 import Main from "./../components/AppFiles/Main";
 import RotatePrompt from "../components/AppFiles/RotatePrompt";
 
+/**
+ * MMAA (MMA Analytica App) component for rendering the main application content.
+ * @function MMAA
+ * @returns {JSX.Element} - MMAA component JSX.
+ */
 const MMAA = () => {
+    // State to control the visibility of the rotate prompt
     const [showPrompt, setShowPrompt] = useState(window.innerWidth < 601);
 
     useEffect(() => {
+        // Function to handle resize events and update showPrompt state
         const handleResize = () => {
             setShowPrompt(window.innerWidth < 601 || 
                 (window.innerHeight < 
                     window.innerWidth && 
-                    window.Width < 950));
+                    window.innerWidth < 950));
         };
 
-        // Attach the event listener
+        // Attach the event listener for resize events
         window.addEventListener('resize', handleResize);
 
         // Clean up the event listener on component unmount
@@ -38,4 +45,5 @@ const MMAA = () => {
     );
 };
 
+// Export the MMAA component as the default export
 export default MMAA;

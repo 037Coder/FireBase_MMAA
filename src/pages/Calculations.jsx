@@ -1,5 +1,4 @@
-
-// Import the 'Header', 'Footer', and Stylesheet
+// Import necessary components and styles
 import Header from './../shared/Header';
 import Footer from './../shared/Footer';
 import './../stylesheets/Pages.css';
@@ -7,6 +6,11 @@ import { Spacer, MiniSpacer } from './../shared/Spacer';
 import LogoButton from '../shared/logo-button';
 import { Link } from 'react-router-dom'
 
+/**
+ * About component for displaying information about the application.
+ * @function About
+ * @returns {JSX.Element} - About component JSX.
+ */
 const Calculations = () => {
     return (
         <div className="page-container">

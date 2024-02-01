@@ -1,15 +1,22 @@
-
-// Import the 'Header', 'Footer', and Stylesheet
+// Import necessary components and styles
 import Header from './../shared/Header';
 import Footer from './../shared/Footer';
 import './../stylesheets/Pages.css';
 import { Spacer, MiniSpacer } from '../shared/Spacer';
 import LogoButton from '../shared/logo-button';
 
+/**
+ * Disclaimer component for displaying a disclaimer page with important notices.
+ * @function Disclaimer
+ * @returns {JSX.Element} - Disclaimer component JSX.
+ */
 const Disclaimer = () => {
     return (
         <div className="page-container">
+            {/* Display the header of the page */}
             <Header />
+
+            {/* Main content section with the disclaimer information */}
             <div className="information-section">
                 <h1>Disclaimer:</h1>
                 <h2>Important Notice:</h2>
@@ -19,7 +26,6 @@ const Disclaimer = () => {
                     information and may not be entirely accurate or up-to-date. We make
                     reasonable efforts to ensure the accuracy of the data, but we cannot
                     guarantee its completeness or correctness.
-
                 </p>
                 <MiniSpacer />
                 <p>
@@ -64,7 +70,6 @@ const Disclaimer = () => {
                     <strong>Legal Compliance: </strong>
                     Users are responsible for ensuring that their use of this website complies
                     with all applicable laws and regulations in their jurisdiction.
-
                 </p>
                 <MiniSpacer />
                 <p>
@@ -74,13 +79,17 @@ const Disclaimer = () => {
                     </strong>
                 </p>
                 <Spacer />
+                {/* Display the logo button */}
                 <LogoButton />
                 <Spacer />
                 <Spacer />
             </div>
+
+            {/* Display the footer of the page */}
             <Footer />
         </div>
     );
 }
 
+// Export the Disclaimer component as the default export
 export default Disclaimer;

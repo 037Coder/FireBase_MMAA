@@ -1,11 +1,8 @@
 // Import necessary libraries and components
 import React from 'react';
-
 // Import styles for the Footer component
 import './../stylesheets/Footer.css';
-
 import { Link } from 'react-router-dom'; // Import Link component from react-router-dom library
-
 import LogoButton from './../shared/logo-button'; // Import LogoButton component from LogoButton.jsx file
 
 /**
@@ -15,7 +12,7 @@ import LogoButton from './../shared/logo-button'; // Import LogoButton component
  */
 const Footer = () => {
   return (
-    // Footer element with a specified class name
+    // Footer element 
     <footer>{/** 
       <div className='footer'>
       <Link to="/"><p className='footer-menu'>Home</p></Link>

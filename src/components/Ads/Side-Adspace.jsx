@@ -1,7 +1,4 @@
-// Import necessary libraries and components
 import React from 'react';
-
-// Import styles for the sideAdspace component
 import './../../stylesheets/Main.css';
 
 /**
@@ -9,7 +6,7 @@ import './../../stylesheets/Main.css';
  * @function sideAdspace
  * @returns {JSX.Element} The rendered sideAdspace component.
  */
-const sideAdspace = () => {
+const SideAdspace = () => {
   return (
     // Container for the side ad
     <div className='Ad_container'>
@@ -31,4 +28,4 @@ const sideAdspace = () => {
 }
 
 // Export the sideAdspace component as the default export
-export default sideAdspace;
+export default SideAdspace;

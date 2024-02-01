@@ -1,12 +1,7 @@
-// Import necessary libraries and components
+// Import components and stylesheets
 import React from 'react';
-
-// Import styles for the Header component
 import './../stylesheets/Header.css';
-
-
 import LogoButton from './../shared/logo-button';
-
 import Menu from './Menu'
 
 /**

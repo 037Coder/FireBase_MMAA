@@ -1,29 +1,35 @@
-import React, { useState } from 'react';
+// Import necessary components and stylesheets
+import React from 'react';
 import Downshift from 'downshift'; // Importing the useCombobox hook from downshift
 import { FaSearch } from 'react-icons/fa';
-import './../../stylesheets/Search.css'
+import './../../stylesheets/Search.css';
 import Adspace from './../Ads/Side-Adspace'; // Assuming you have an Adspace component
-import getData from './../../utils/StorageService'
-
+import getData from './../../utils/StorageService';
 
 /**
  * SearchRight component for displaying a list of names and handling name selection.
- *
+ * @function SearchRight
  * @param {Object} props - Component properties.
- * @param {Function} props.onSelect - Callback function invoked when a name is selected.
+ * @param {Function} props.onObjectFetched - Callback function invoked when an object is fetched.
+ * @param {Array} props.listOfNames - List of names to be displayed in the search panel.
  * @returns {JSX.Element} - SearchRight component JSX.
  */
 const SearchRight = ({ listOfNames, onObjectFetched }) => {
   const items = listOfNames || [];
 
+  /**
+   * Handles the selection of a name, fetching the corresponding object.
+   * @function handleNameSelect
+   * @param {string} name - The selected name.
+   */
   const handleNameSelect = async (name) => {
     let inCache = false;
     const cachedData = sessionStorage.getItem(name);
-
+    
     if (cachedData) {
       // Data exists in sessionStorage
       inCache = true;
-      console.log("Data collected from Session.Storage")
+      console.log("Data collected from Session.Storage");
       onObjectFetched(cachedData);
     } else {
       try {
@@ -83,9 +89,10 @@ const SearchRight = ({ listOfNames, onObjectFetched }) => {
           </div>
         )}
       </Downshift>
-      <Adspace />
+      {<Adspace />}
     </div>
   );
 };
 
+// Export the SearchRight component as the default export
 export default SearchRight;

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CookieConsent from './shared/CookieConsent';
 
 // Import CSS styles for the 'App' component
-import './App.css';
+import './index.css';
 
 // Use React.lazy to lazily import your components
 const Home = lazy(() => import('./pages/Home'));
