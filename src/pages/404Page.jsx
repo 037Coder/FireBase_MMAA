@@ -1,9 +1,8 @@
 // Import necessary components and styles
-import React, {useEffect} from 'react';
-import { Link } from 'react-router-dom';
-import Header from './../shared/Header';
-import Footer from './../shared/Footer';
-import { Spacer, MiniSpacer } from '../shared/Spacer';
+import React, { useEffect } from 'react';
+import Header from '../shared/Header';
+import Footer from '../shared/Footer';
+import { Spacer } from '../shared/Spacer';
 import LogoButton from '../shared/logo-button';
 import './../stylesheets/Pages.css';
 import { logPageVisit } from "../utils/StorageConfig";
@@ -13,10 +12,10 @@ import { logPageVisit } from "../utils/StorageConfig";
  * @function About
  * @returns {JSX.Element} - About component JSX.
  */
-const About = () => {
+const NotFound = () => {
 
   useEffect(() => {
-    logPageVisit('About')
+    logPageVisit('404')
   }, [])
 
   return (
@@ -26,20 +25,20 @@ const About = () => {
 
       {/* Main content section with information about the application */}
       <div className="information-section">
-        <h1>About Us</h1>
-        <p><strong>MMAAnalytica</strong> strives to provide unbiased quantitative data in an easy-to-view manner.</p>
         <Spacer />
-        <p>Analyze your favorite fighter's <strong>last 5</strong> fights to predict their performance and compare
-          them to the greatest to grace the Octagon.</p>
+        <LogoButton />
         <Spacer />
-        <p><Link to={"/calculations"}>See how we calculate the data we provide.</Link></p>
+        <h1>404 - Not Found</h1>
         <Spacer />
-        <p><strong>Contact us</strong> if you find any discrepancies in the data As Soon As Possible</p>
         <Spacer />
-        <p>Read our <Link to={"/disclaimer"}>Disclaimer</Link> to Find out more</p>
+        <h2>incorrect URL</h2>
+        <Spacer />
+        <h3>Sorry, the page you are looking for does not exist.</h3>
+        <Spacer />
         <Spacer />
         {/* Display the logo button */}
         <LogoButton />
+        <Spacer />
         <Spacer />
         <Spacer />
       </div>
@@ -51,4 +50,4 @@ const About = () => {
 };
 
 // Export the About component as the default export
-export default About;
+export default NotFound;
