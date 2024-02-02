@@ -28,6 +28,7 @@ const Calculations = () => {
                     from the official UFC website.
                 </p>
                 <Spacer />
+                <img className="hero" src="https://firebasestorage.googleapis.com/v0/b/mmaanalyticawebapplication.appspot.com/o/MMAA_Media%2FMMAA_Calculator.png?alt=media&token=95ef15eb-9d09-46f3-b9df-5ea2f3a4fff6"></img>
                 <h2>Data Points:</h2>
                 <h3>Labels</h3>
                 <MiniSpacer />

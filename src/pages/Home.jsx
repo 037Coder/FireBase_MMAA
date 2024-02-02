@@ -7,6 +7,7 @@ import './../stylesheets/Pages.css';
 import { Spacer } from '../shared/Spacer';
 import LogoButton from '../shared/logo-button';
 import { logPageVisit } from '../utils/StorageConfig';
+import banner from "./../MMAA_Logo_Banner.png"
 
 /**
  * Home component for displaying the home page content.
@@ -27,7 +28,9 @@ const Home = () => {
 
             {/* Main content section with information about the application */}
             <div className='information-section'>
-                <h1>Welcome to MMAAnalytica</h1>
+                <h1>Welcome</h1>
+                <img className="hero" alt="<h1>hi</h1>"src={banner}></img>
+                <Spacer />
                 {/* Display the logo button */}
                 <LogoButton />
                 <h3><Link to="/mmaa">The App</Link></h3>

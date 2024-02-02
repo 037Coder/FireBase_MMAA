@@ -1,14 +1,15 @@
-.page-container{
+.page-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
     width: 100vw;
     background-position: center;
-    background-size:contain;
-    background-repeat:no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-color: whitesmoke;
     align-items: center;
+
 }
 
 .information-section {
@@ -24,6 +25,18 @@
     max-width: 700px;
     border-left: 1px solid #3a8869;
     border-right: 1px solid #3a8869;
+    background-image:
+        url('https://firebasestorage.googleapis.com/v0/b/mmaanalyticawebapplication.appspot.com/o/MMAA_Media%2FMMAA_Background.png?alt=media&token=0b8ed146-eb43-4055-9666-d7bb8d3a2330'
+        );
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: left;
+    background-blend-mode: color-dodge;
+}
+
+.banner {
+    width: 100%;
 }
 
 .spacer {
@@ -66,8 +79,8 @@ td {
     font-weight: bolder;
 }
 
-#disclaimerlist{
-    border:none;
+#disclaimerlist {
+    border: none;
     background: none;
     box-shadow: none;
     margin: 0px 0px 5vh 2vw;

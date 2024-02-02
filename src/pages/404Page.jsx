@@ -6,6 +6,7 @@ import { Spacer } from '../shared/Spacer';
 import LogoButton from '../shared/logo-button';
 import './../stylesheets/Pages.css';
 import { logPageVisit } from "../utils/StorageConfig";
+import { Link } from 'react-router-dom';
 
 /**
  * About component for displaying information about the application.
@@ -33,7 +34,12 @@ const NotFound = () => {
         <Spacer />
         <h2>incorrect URL</h2>
         <Spacer />
-        <h3>Sorry, the page you are looking for does not exist.</h3>
+        <h3>Sorry, the page you are looking for does not exist.Or a serious error has occured. 
+          </h3>
+        <h3>If this persists; 
+          Please explain in the feedback section 
+          <Link to="/contact"> here</Link>
+          </h3>
         <Spacer />
         <Spacer />
         {/* Display the logo button */}
