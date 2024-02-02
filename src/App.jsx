@@ -26,7 +26,7 @@ function App() {
     <>
       {/* Main container for the entire app */}
       <Router>
-        <CookieConsent />
+        {/*<CookieConsent />*/}
         <div className="App">
           {/* Wrap Routes in a Suspense component */}
           <Suspense fallback={<div>Loading...</div>}>
