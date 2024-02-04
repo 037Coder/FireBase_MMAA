@@ -28,13 +28,16 @@ const Home = () => {
 
             {/* Main content section with information about the application */}
             <div className='information-section'>
-                <h1>Welcome</h1>
-                <img className="hero" alt="<h1>hi</h1>"src={banner}></img>
-                <Spacer />
+                <h1>Home</h1>
                 {/* Display the logo button */}
                 <LogoButton />
                 <h3><Link to="/mmaa">The App</Link></h3>
-                <h2>Compare MMA Fighters Like Never Before</h2>
+
+                <img className="hero" alt="<h1>hi</h1>" src={banner}></img>
+                <Spacer />
+
+
+                <h2>Head to Head comparisons</h2>
                 <p>
                     <strong>MMAAnalytica (MMAA)</strong> empowers MMA fans and data enthusiasts
                     with a unique approach to fighter analysis. Select any two UFC

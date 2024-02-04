@@ -3,6 +3,8 @@ import React from 'react';
 import './../stylesheets/Header.css';
 import LogoButton from './../shared/logo-button';
 import Menu from './Menu'
+import reddit_logo from './../reddit-icon.svg'
+import x_logo from './../x-icon.svg'
 
 /**
  * Functional component representing the header of the application.
@@ -18,8 +20,14 @@ const Header = () => {
         {/* Logo image sourced from the specified path */}
         <LogoButton />
       </div>
+
+      <div className='mini-menu'>
+        <a className='social-media-icons-container' href='https://twitter.com/mmaanalytica'>
+          <img className='social-media-icons' src={x_logo}></img>
+        </a>
+      </div>
       <Menu />
-    </header>
+    </header >
   );
 };
 

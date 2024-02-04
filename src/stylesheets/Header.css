@@ -19,4 +19,24 @@ header{
     margin-left: 1vw;
 }
 
+.mini-menu{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 40vw;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.social-media-icons-container{
+    height: 80%;
+    width: fit-content;
+}
+
+.social-media-icons{
+    height: 100%;
+    width: fit-content;
+}
+
+
 
