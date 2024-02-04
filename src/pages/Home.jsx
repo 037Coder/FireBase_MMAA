@@ -39,8 +39,7 @@ const Home = () => {
 
                 <h2>Head to Head comparisons</h2>
                 <p>
-                    <strong>MMAAnalytica (MMAA)</strong> empowers MMA fans and data enthusiasts
-                    with a unique approach to fighter analysis. Select any two UFC
+                    <strong>MMAAnalytica: (MMAA)</strong> Select any two UFC
                     fighters, dive into their last 5 fights, and explore key data
                     points to gain unparalleled insights.
                 </p>
