@@ -1,5 +1,6 @@
 import React from 'react';
 import './../../stylesheets/Main.css';
+import ad from './../../Ad_Example.png'
 
 /**
  * Functional component representing a side ad space.
@@ -7,22 +8,11 @@ import './../../stylesheets/Main.css';
  * @returns {JSX.Element} The rendered sideAdspace component.
  */
 const SideAdspace = () => {
+  
   return (
     // Container for the side ad
     <div className='Ad_container'>
-      {/* Ad loaded from Adspace */}
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1868604488206980"
-        crossOrigin="anonymous"></script>
-      {/*sideAd*/}
-      <ins className="adsbygoogle"
-        style={{ display: 'block' }}
-        data-ad-client="ca-pub-1868604488206980"
-        data-ad-slot="4021723608"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({ });
-      </script>
+      <img src={ad}></img>
     </div>
   );
 }

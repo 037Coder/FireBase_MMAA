@@ -5,9 +5,10 @@
     padding: 2px;
     align-items: center;
     background-color: black;
-    background-position: top;
+    background-position: center;
     background-attachment: fixed;
-    background-size: contain;
+    background-size:contain;
+    background-repeat:no-repeat;
 }
 
 .graph-container {

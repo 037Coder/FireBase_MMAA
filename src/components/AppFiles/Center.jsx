@@ -9,6 +9,7 @@ import StandingRadarchart from '../Charts/standing-chart';
 import GroundRadarchart from '../Charts/ground-chart';
 import InfoBox from '../Charts/info-box';
 import BannerAdExample from '../Ads/Banner-Adspace';
+import ad from './../../Ad_Example.png'
 
 /**
  * Functional component representing the central content of the application.
@@ -37,7 +38,7 @@ const Center = ({ leftObject, rightObject }) => {
 
   return (
     // Main container for the central content of the application
-    <div className="center">
+    <div className="center" style={{backgroundImage: `url(${ad})`}}>
       <div className="graph-container">
         {/* List of content containers */}
         <div className="graph-content-list">
