@@ -50,9 +50,15 @@
 }
 
 .autocomplete-menu {
-    background-color: aliceblue;
+    background-color: blue;
     width: 100%;
     z-index: 50;
+}
+
+.search-item{
+    border-bottom: 1px solid #3a8869;
+    font-size: 0.8em;
+    text-align: center;
 }
 
 #search-box-left {

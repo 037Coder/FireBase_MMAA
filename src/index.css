@@ -10,7 +10,7 @@ body {
 
 .App {
     align-items: center;
-  }
+}
 
 /* black-ops-one-regular - latin */
 h1 {
@@ -49,6 +49,13 @@ p {
     text-align: left;
 }
 
+.search-item {
+    text-transform: uppercase;
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Chakra Petch';
+}
+
 
 @media only screen and (max-width: 900px) {
     p {
@@ -84,7 +91,7 @@ p {
     h3 {
         font-size: 24px;
     }
-    
+
     p {
         font-size: 18px;
     }

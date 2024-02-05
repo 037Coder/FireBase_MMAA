@@ -69,20 +69,14 @@ const SearchLeft = ({ listOfNames, onObjectFetched }) => {
                 {items
                   .filter((item) => item.name.toLowerCase().includes(inputValue.toLowerCase()))
                   .map((item, index) => (
-                    <div
+                    <div className='search-item'
                       {...getItemProps({
                         key: item.name,
                         index,
                         item,
                         style: {
-                          fontFamily: 'Arial',
                           backgroundColor: highlightedIndex === index ? '#7da897' : 'white',
                           fontWeight: selectedItem === item ? 'bolder' : 'lighter',
-                          borderBottom: '0.1vh solid #3a8869',
-                          borderRadius: '0.7vh',
-                          fontSize: '0.8em',
-                          zIndex: '50',
-                          textAlign: 'center'
                         },
                       })}
                     >
