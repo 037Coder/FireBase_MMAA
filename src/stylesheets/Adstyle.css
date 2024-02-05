@@ -1,0 +1,29 @@
+.Ad_cotainer {
+    display: block;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    z-index: 0;
+}
+
+.ad_image{
+    align-self: center;
+    text-align: center;
+    width: auto;
+    height: 70vh;
+}
+
+.Banner_Ad_container {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.Banner-Ad {
+    max-width: 99%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}

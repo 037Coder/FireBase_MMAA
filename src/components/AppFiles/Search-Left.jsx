@@ -27,7 +27,7 @@ const SearchLeft = ({ listOfNames, onObjectFetched }) => {
     let inCache = false;
     const cachedData = sessionStorage.getItem(name);
     logSearchEvent(name)
-    
+
     if (cachedData) {
       // Data exists in sessionStorage
       inCache = true;
@@ -43,8 +43,9 @@ const SearchLeft = ({ listOfNames, onObjectFetched }) => {
       }
     }
   };
-  
+
   return (
+
     <div className='search-panel'>
       <Downshift
         itemToString={(item) => (item ? item.name : '')} // Assuming the item is an object with a "name" property
@@ -80,6 +81,8 @@ const SearchLeft = ({ listOfNames, onObjectFetched }) => {
                           borderBottom: '0.1vh solid #3a8869',
                           borderRadius: '0.7vh',
                           fontSize: '0.8em',
+                          zIndex: '50',
+                          textAlign: 'center'
                         },
                       })}
                     >
@@ -93,6 +96,8 @@ const SearchLeft = ({ listOfNames, onObjectFetched }) => {
       </Downshift>
       {<Adspace />}
     </div>
+
+
   );
 };
 

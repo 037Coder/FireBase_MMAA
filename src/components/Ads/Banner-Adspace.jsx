@@ -1,5 +1,5 @@
 import React from 'react';
-import './../../stylesheets/Main.css';
+import './../../stylesheets/Adstyle.css';
 
 /**
  * Functional component representing a banner ad example.
