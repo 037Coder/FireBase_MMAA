@@ -22,6 +22,10 @@ const Main = () => {
   const [leftObject, setLeftObject] = useState(null);
   const [rightObject, setRightObject] = useState(null);
 
+  // State to manage leftOption and rightOption respectively
+  const [leftOption, setLeftOption] = useState('All Fights');
+  const [rightOption, setRightOption] = useState('All Fights');
+
   /**
    * Callback function invoked when names are loaded.
    *
@@ -42,6 +46,13 @@ const Main = () => {
     setRightObject(object);
   };
 
+  const handleRightOption = (option) => {
+    setRightOption(option)
+  }
+
+  const handleLeftOption = (option) => {
+    setLeftOption(option)
+  }
   // Render the Main component
   return (
 
@@ -50,31 +61,37 @@ const Main = () => {
       <div className="search" id="search-left">
         <SearchLeft
           listOfNames={list}
-          onObjectFetched={handleLeftObjectFetched} /> {/* Render SearchLeft component */}
+          onObjectFetched={handleLeftObjectFetched}
+          option={handleLeftOption} /> 
+          {/* Render SearchLeft component */}
       </div>
 
       {/* Middle section of the main container */}
       <div className='middle'>
         <h1>MMA Analytica</h1>
         <h3>Last 5 Fights</h3>
-        <p style={{fontSize: '12px', margin: '0'}}>
-          for more information on the datapoints see our 
-          <Link to='/calculations'> calculations </Link> 
+        <p style={{ fontSize: '12px', margin: '0' }}>
+          for more information on the datapoints see our
+          <Link to='/calculations'> calculations </Link>
           page.
-          </p>
+        </p>
         {/*<NameList onNamesLoaded={handleNamesLoaded} />*/}
-        <ListAllObjects onNamesLoaded={handleNamesLoaded}/>
-        
+        <ListAllObjects onNamesLoaded={handleNamesLoaded} />
+
         <Center
           rightObject={rightObject}
-          leftObject={leftObject} /> {/* Render Center component */}
+          leftObject={leftObject}
+          leftOption={leftOption}
+          rightOption={rightOption} /> {/* Render Center component */}
       </div>
 
       {/* Right side of the main container */}
       <div className="search" id="search-right">
         <SearchRight
           listOfNames={list}
-          onObjectFetched={handleRightObjectFetched} /> {/* Render SearchRight component */}
+          onObjectFetched={handleRightObjectFetched}
+          option={handleRightOption}
+          /> {/* Render SearchRight component */}
       </div>
     </main>
   );

@@ -19,10 +19,28 @@ import ad from './../../Ad_Example.png'
  * @param {string} props.rightObject - JSON data for the right object.
  * @returns {JSX.Element} The rendered Center component.
  */
-const Center = ({ leftObject, rightObject }) => {
+const Center = ({ leftObject, rightObject, leftOption, rightOption }) => {
   // Parse JSON data with a fallback to an empty object if parsing fails
   const leftData = leftObject ? JSON.parse(leftObject) : {};
   const rightData = rightObject ? JSON.parse(rightObject) : {};
+
+  // Function to get the data based on the selected option and chart type
+  const getDataForOption = (data, option, chartType) => {
+    //console.log(option)
+    switch (option) {
+      case 'All Fights':
+        return data.all_data?.Dataset[chartType] ?? [];
+      case 'Last 5 Fights':
+        return data.l5_data?.Dataset[chartType] ?? [];
+      case 'Last 3 Years':
+        return (
+          data['3y_data'] && data['3y_data'].Dataset) ?
+          data['3y_data'].Dataset[chartType] ??
+          [] : [];
+      default:
+        return [];
+    }
+  };
 
   // Reference to the center element for scrolling
   const centerRef = useRef();
@@ -38,13 +56,15 @@ const Center = ({ leftObject, rightObject }) => {
 
   return (
     // Main container for the central content of the application
-    <div className="center" style={{backgroundImage: `url(${ad})`}}>
+    <div className="center" style={{ backgroundImage: `url(${ad})` }}>
       <div className="graph-container">
         {/* List of content containers */}
         <div className="graph-content-list">
           {/* InfoBox component displaying information about the data */}
           <div className="graph-content" ref={centerRef}>
-            <InfoBox leftdata={leftData} rightdata={rightData} />
+            <InfoBox
+              leftdata={leftData} rightdata={rightData}
+              leftOption={leftOption} rightOption={rightOption} />
             <BannerAdExample />
           </div>
 
@@ -53,8 +73,8 @@ const Center = ({ leftObject, rightObject }) => {
             <h3>Overall Analytics</h3>
             <OverallRadarchart
               className='Ad-checker'
-              leftdata={leftData.Dataset?.Overall ?? []}
-              rightdata={rightData.Dataset?.Overall ?? []}
+              leftdata={getDataForOption(leftData, leftOption, 'Overall')}
+              rightdata={getDataForOption(rightData, rightOption, 'Overall')}
             />
             <BannerAdExample />
           </div>
@@ -64,8 +84,8 @@ const Center = ({ leftObject, rightObject }) => {
             <h3>Success Analytics</h3>
             <SuccessRadarchart
               className='Ad-checker'
-              leftdata={leftData.Dataset?.Attack ?? []}
-              rightdata={rightData.Dataset?.Attack ?? []}
+              leftdata={getDataForOption(leftData, leftOption, 'Attack')}
+              rightdata={getDataForOption(rightData, rightOption, 'Attack')}
             />
             <BannerAdExample />
           </div>
@@ -75,8 +95,8 @@ const Center = ({ leftObject, rightObject }) => {
             <h3>Defence Analytics</h3>
             <DefenceRadarchart
               className='Ad-checker'
-              leftdata={leftData.Dataset?.Defence ?? []}
-              rightdata={rightData.Dataset?.Defence ?? []}
+              leftdata={getDataForOption(leftData, leftOption, 'Defence')}
+              rightdata={getDataForOption(rightData, rightOption, 'Defence')}
             />
             <BannerAdExample />
           </div>
@@ -86,8 +106,8 @@ const Center = ({ leftObject, rightObject }) => {
             <h3>Ratio Analytics</h3>
             <RatioRadarchart
               className='Ad-checker'
-              leftdata={leftData.Dataset?.Ratio ?? []}
-              rightdata={rightData.Dataset?.Ratio ?? []}
+              leftdata={getDataForOption(leftData, leftOption, 'Ratio')}
+              rightdata={getDataForOption(rightData, rightOption, 'Ratio')}
             />
             <BannerAdExample />
           </div>
@@ -97,8 +117,8 @@ const Center = ({ leftObject, rightObject }) => {
             <h3>Standing Analytics</h3>
             <StandingRadarchart
               className='Ad-checker'
-              leftdata={leftData.Dataset?.Standing ?? []}
-              rightdata={rightData.Dataset?.Standing ?? []}
+              leftdata={getDataForOption(leftData, leftOption, 'Standing')}
+              rightdata={getDataForOption(rightData, rightOption, 'Standing')}
             />
             <BannerAdExample />
           </div>
@@ -108,8 +128,8 @@ const Center = ({ leftObject, rightObject }) => {
             <h3>Ground Analytics</h3>
             <GroundRadarchart
               className='Ad-checker'
-              leftdata={leftData.Dataset?.Ground ?? []}
-              rightdata={rightData.Dataset?.Ground ?? []}
+              leftdata={getDataForOption(leftData, leftOption, 'Ground')}
+              rightdata={getDataForOption(rightData, rightOption, 'Ground')}
             />
             <BannerAdExample />
           </div>
@@ -135,8 +155,8 @@ const validateFighterData = (propValue, key) => {
 
 // Declare propTypes to recognize data
 Center.propTypes = {
-  leftObject: PropTypes.string,
-  rightObject: PropTypes.string,
+  leftObject: PropTypes.Object,
+  rightObject: PropTypes.Object,
 };
 
 // Export the Center component as the default export

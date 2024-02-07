@@ -20,7 +20,26 @@ InfoBox.propTypes = {
  * @param {Object} props.rightdata - Data for the right side of the information box.
  * @returns {JSX.Element} The rendered InfoBox component.
  */
-function InfoBox({ leftdata={}, rightdata={} }) {
+function InfoBox({ leftdata = {}, rightdata = {}, leftOption, rightOption }) {
+
+    const getRecordforOption = (data, option) => {
+        switch (option) {
+            case 'All Fights':
+                return data.all_record;
+            case 'Last 5 Fights':
+                return data.l5_record;
+            case 'Last 3 Years':
+                return (
+                    data['3y_record'] !== "null" ?
+                        data['3y_record'] :
+                        '0'
+                );
+            default:
+                return [];
+        }
+    }
+
+
     return (
         // Container for the information box
         <div className="infobox-container">
@@ -38,9 +57,9 @@ function InfoBox({ leftdata={}, rightdata={} }) {
             {/* Container for the fighter records */}
             <div className="box-container">
                 {/* Fighter record for the left side */}
-                <p className="record_box" id="lBox">{leftdata.record} </p>
+                <p className="record_box" id="lBox">{getRecordforOption(leftdata, leftOption)} </p>
                 {/* Fighter record for the right side */}
-                <p className="record_box" id="rBox">{rightdata.record} </p>
+                <p className="record_box" id="rBox">{getRecordforOption(rightdata, rightOption)} </p>
             </div>
         </div>
     );

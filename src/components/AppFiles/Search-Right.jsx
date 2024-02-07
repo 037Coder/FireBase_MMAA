@@ -1,11 +1,12 @@
 // Import necessary components and stylesheets
-import React from 'react';
+import React, { useState } from 'react';
 import Downshift from 'downshift'; // Importing the useCombobox hook from downshift
 import { FaSearch } from 'react-icons/fa';
 import './../../stylesheets/Search.css';
 import Adspace from './../Ads/Side-Adspace'; // Assuming you have an Adspace component
 import getData from './../../utils/StorageService';
 import { logSearchEvent } from '../../utils/StorageConfig';
+import FilterOptions from './FilterOptions';
 
 /**
  * SearchRight component for displaying a list of names and handling name selection.
@@ -15,8 +16,9 @@ import { logSearchEvent } from '../../utils/StorageConfig';
  * @param {Array} props.listOfNames - List of names to be displayed in the search panel.
  * @returns {JSX.Element} - SearchRight component JSX.
  */
-const SearchRight = ({ listOfNames, onObjectFetched }) => {
+const SearchRight = ({ listOfNames, onObjectFetched, option }) => {
   const items = listOfNames || [];
+  const [selectedOption, setSelectedOption] = useState('All Fights')
 
   /**
    * Handles the selection of a name, fetching the corresponding object.
@@ -27,7 +29,7 @@ const SearchRight = ({ listOfNames, onObjectFetched }) => {
     let inCache = false;
     const cachedData = sessionStorage.getItem(name);
     logSearchEvent(name)
-    
+
     if (cachedData) {
       // Data exists in sessionStorage
       inCache = true;
@@ -43,6 +45,11 @@ const SearchRight = ({ listOfNames, onObjectFetched }) => {
       }
     }
   };
+
+  const handleOptionSelect = (selectedOption) => {
+    setSelectedOption(selectedOption);
+    option(selectedOption)
+  }
 
   return (
     <div className='search-panel'>
@@ -87,6 +94,7 @@ const SearchRight = ({ listOfNames, onObjectFetched }) => {
           </div>
         )}
       </Downshift>
+      <FilterOptions selectedOption={selectedOption} onSelect={handleOptionSelect} />
       {<Adspace />}
     </div>
   );

@@ -3,7 +3,7 @@ import { storage } from "./StorageConfig";
 import { useState, useEffect } from 'react';
 
 const BucketList = ({ onNamesLoaded }) => {
-    const listRef = ref(storage, 'MMAA_Fighters');
+    const listRef = ref(storage, 'MMAA_Fighter_Data');
 
     useEffect(() => {
         listAll(listRef)

@@ -26,7 +26,7 @@ function App() {
     <>
       {/* Main container for the entire app */}
       <Router>
-        <ErrorBoundary>
+        {/*<ErrorBoundary>*/}
           {/*<CookieConsent />*/}
           <div className="App">
             {/* Wrap Routes in a Suspense component */}
@@ -41,7 +41,7 @@ function App() {
               </Routes>
             </Suspense>
           </div>
-        </ErrorBoundary>
+        {/*</ErrorBoundary>*/}
       </Router>
 
     </>

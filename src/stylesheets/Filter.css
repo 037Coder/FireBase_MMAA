@@ -1,0 +1,23 @@
+.filter_label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.75em;
+    font-weight:bold;
+    color: #23503e;
+}
+.filter_options{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: transparent;
+    border: none;
+    font-size: 0.8em;
+    padding: 5px;
+    width: fit-content;
+    left: -4px;
+}
+.filter_op{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: #E7F1ED;
+    border: none;
+    width: fit-content;
+}
