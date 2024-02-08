@@ -29,10 +29,12 @@ main {
     /*height: 100vh;*/
 }
 
-#search-left{
-    border-radius: 10px solid red;
+.appTitle {
+    font-size: 6vw;
+    margin-bottom: 0px;
 }
 
-#search-right{
-    border-radius: 10px solid blue;
+.subInfo{
+    font-size: 14px;
+    margin: 2px 10px;
 }

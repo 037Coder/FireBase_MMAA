@@ -68,10 +68,12 @@ const Main = () => {
 
       {/* Middle section of the main container */}
       <div className='middle'>
-        <h1>MMA Analytica</h1>
-        <h3>Last 5 Fights</h3>
-        <p style={{ fontSize: '12px', margin: '0' }}>
-          for more information on the datapoints see our
+        <h1 className="appTitle">MMA Analytica</h1>
+        <p className="subInfo">Please read our
+          <Link to='/disclaimer'> disclaimer </Link>
+          page.
+        </p>
+        <p className='subInfo'>For more information on the datapoints see our
           <Link to='/calculations'> calculations </Link>
           page.
         </p>
