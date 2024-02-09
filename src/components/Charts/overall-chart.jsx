@@ -10,7 +10,7 @@ import {
 } from 'chart.js';
 
 // Import color constants
-import { DeepBlue, DeepRed } from "./../../shared/colors";
+import { DeepBlue, DeepRed, CadetGray, OldRose } from "./../../shared/colors";
 
 // Import styles for the OverallRadarchart component
 import './../../stylesheets/Center.css';
@@ -39,21 +39,34 @@ OverallRadarchart.propTypes = {
  * @param {Object} props.rightdata - Data for the right side of the radar chart.
  * @returns {JSX.Element} The rendered OverallRadarchart component.
  */
-function OverallRadarchart({ leftdata = [], rightdata = [] }) {
+function OverallRadarchart({ 
+  leftdata = [], rightdata = [],
+  leftdataL5 = [], rightdataL5 = [],
+  optionStringLeft = '', optionStringRight = '' }) {
   // Radar chart data configuration for overall analytics
   const data = {
     labels: ['WINS', 'KD Rat', 'SS Acc', 'TTL Acc', 'CTRL', 'TTL Def', 'SS Def', 'TD Rat'],
     datasets: [{
-      label: '',
-      data: leftdata,
+      label: 'Last 5',
+      data: leftdataL5,
       backgroundColor: DeepRed,
       borderColor: DeepRed
     }, {
-      label: '',
-      data: rightdata,
+      label: 'Last 5',
+      data: rightdataL5,
       backgroundColor: DeepBlue,
       borderColor: DeepBlue
-    }]
+    }, {
+      label: optionStringLeft,
+      data: leftdata,
+      backgroundColor: OldRose,
+      borderColor: OldRose
+  }, {
+      label: optionStringRight,
+      data: rightdata,
+      backgroundColor: CadetGray,
+      borderColor: CadetGray
+  }]
   };
 
   // Radar chart options configuration
