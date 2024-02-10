@@ -10,7 +10,7 @@ import {
 } from 'chart.js';
 
 // Import color constants
-import { DeepBlue, DeepRed } from "./../../shared/colors";
+import { DeepBlue, DeepRed, LightBlue, LightRed } from "./../../shared/colors";
 
 // Import styles for the OverallRadarchart component
 import './../../stylesheets/Center.css';
@@ -39,32 +39,45 @@ OverallRadarchart.propTypes = {
  * @param {Object} props.rightdata - Data for the right side of the radar chart.
  * @returns {JSX.Element} The rendered OverallRadarchart component.
  */
-function OverallRadarchart({ leftdata = [], rightdata = [] }) {
+function OverallRadarchart({
+  leftdata = [], rightdata = [],
+  leftDataLastFive = [], rightDataLastFive = [],
+  leftOption = '', rightOption = '' }) {
   // Radar chart data configuration for overall analytics
   const data = {
     labels: ['WINS', 'KD Rat', 'SS Acc', 'TTL Acc', 'CTRL', 'TTL Def', 'SS Def', 'TD Rat'],
     datasets: [{
-      label: '',
-      data: leftdata,
+      label: 'Last 5',
+      data: leftDataLastFive,
       backgroundColor: DeepRed,
       borderColor: DeepRed
     }, {
-      label: '',
-      data: rightdata,
+      label: 'Last 5',
+      data: rightDataLastFive,
       backgroundColor: DeepBlue,
       borderColor: DeepBlue
+    }, {
+      label: leftOption,
+      data: leftdata,
+      backgroundColor: LightRed,
+      borderColor: LightRed
+    }, {
+      label: rightOption,
+      data: rightdata,
+      backgroundColor: LightBlue,
+      borderColor: LightBlue
     }]
   };
 
   // Radar chart options configuration
   const options = chartOptions;
-    return (
-      // Container for the radar chart
-      <div className="chart">
-    {/* Render the Radar chart using react-chartjs-2 */}
-    <Radar className='radar' data={data} options={options} />
-  </div>
-    );
+  return (
+    // Container for the radar chart
+    <div className="chart">
+      {/* Render the Radar chart using react-chartjs-2 */}
+      <Radar className='radar' data={data} options={options} />
+    </div>
+  );
 
 
 }

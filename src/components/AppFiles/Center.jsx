@@ -10,6 +10,7 @@ import GroundRadarchart from '../Charts/ground-chart';
 import InfoBox from '../Charts/info-box';
 import BannerAdExample from '../Ads/Banner-Adspace';
 import ad from './../../Ad_Example.png'
+import { FaArrowUp, FaArrowCircleUp } from 'react-icons/fa';
 
 /**
  * Functional component representing the central content of the application.
@@ -30,8 +31,6 @@ const Center = ({ leftObject, rightObject, leftOption, rightOption }) => {
     switch (option) {
       case 'All Fights':
         return data.all_data?.Dataset[chartType] ?? [];
-      case 'Last 5 Fights':
-        return data.l5_data?.Dataset[chartType] ?? [];
       case 'Last 3 Years':
         return (
           data['3y_data'] && data['3y_data'].Dataset) ?
@@ -57,79 +56,109 @@ const Center = ({ leftObject, rightObject, leftOption, rightOption }) => {
   return (
     // Main container for the central content of the application
     <div className="center" style={{ backgroundImage: `url(${ad})` }}>
+
+      <a href='#top'>
+        <div id='scroll-up'>
+          <FaArrowUp style={
+            { 
+              color: 'white',
+              fontSize: '55px'
+            }} />
+        </div>
+      </a>
+
       <div className="graph-container">
         {/* List of content containers */}
         <div className="graph-content-list">
           {/* InfoBox component displaying information about the data */}
-          <div className="graph-content" ref={centerRef}>
+          <div className="graph-content" ref={centerRef} id='info'>
             <InfoBox
               leftdata={leftData} rightdata={rightData}
-              leftOption={leftOption} rightOption={rightOption} />
+              leftOption={leftOption} rightOption={rightOption}
+            />
             <BannerAdExample />
           </div>
 
           {/* Overall Analytics radar chart */}
           <div className="graph-content">
-            <h3>Overall Analytics</h3>
+            <h3 id='overall-chart'>Overall Analytics</h3>
             <OverallRadarchart
               className='Ad-checker'
               leftdata={getDataForOption(leftData, leftOption, 'Overall')}
               rightdata={getDataForOption(rightData, rightOption, 'Overall')}
+              leftDataLastFive={leftData.l5_data?.Dataset.Overall ?? []}
+              rightDataLastFive={rightData.l5_data?.Dataset.Overall ?? []}
+              leftOption={leftOption} rightOption={rightOption}
             />
             <BannerAdExample />
           </div>
 
           {/* Success Analytics radar chart */}
           <div className="graph-content">
-            <h3>Success Analytics</h3>
+            <h3 id='success-chart'>Success Analytics</h3>
             <SuccessRadarchart
               className='Ad-checker'
               leftdata={getDataForOption(leftData, leftOption, 'Attack')}
               rightdata={getDataForOption(rightData, rightOption, 'Attack')}
+              leftDataLastFive={leftData.l5_data?.Dataset.Attack ?? []}
+              rightDataLastFive={rightData.l5_data?.Dataset.Attack ?? []}
+              leftOption={leftOption} rightOption={rightOption}
             />
             <BannerAdExample />
           </div>
 
           {/* Defence Analytics radar chart */}
           <div className="graph-content">
-            <h3>Defence Analytics</h3>
+            <h3 id='defence-chart'>Defence Analytics</h3>
             <DefenceRadarchart
               className='Ad-checker'
               leftdata={getDataForOption(leftData, leftOption, 'Defence')}
               rightdata={getDataForOption(rightData, rightOption, 'Defence')}
+              leftDataLastFive={leftData.l5_data?.Dataset.Defence ?? []}
+              rightDataLastFive={rightData.l5_data?.Dataset.Defence ?? []}
+              leftOption={leftOption} rightOption={rightOption}
             />
             <BannerAdExample />
           </div>
 
           {/* Ratio Analytics radar chart */}
           <div className="graph-content">
-            <h3>Ratio Analytics</h3>
+            <h3 id='ratio-chart'>Ratio Analytics</h3>
             <RatioRadarchart
               className='Ad-checker'
               leftdata={getDataForOption(leftData, leftOption, 'Ratio')}
               rightdata={getDataForOption(rightData, rightOption, 'Ratio')}
+              leftDataLastFive={leftData.l5_data?.Dataset.Ratio ?? []}
+              rightDataLastFive={rightData.l5_data?.Dataset.Ratio ?? []}
+              leftOption={leftOption} rightOption={rightOption}
             />
             <BannerAdExample />
           </div>
 
           {/* Standing Analytics radar chart */}
           <div className="graph-content">
-            <h3>Standing Analytics</h3>
+            <h3 id='standing-chart'>Standing Analytics</h3>
             <StandingRadarchart
               className='Ad-checker'
               leftdata={getDataForOption(leftData, leftOption, 'Standing')}
               rightdata={getDataForOption(rightData, rightOption, 'Standing')}
+              leftDataLastFive={leftData.l5_data?.Dataset.Standing ?? []}
+              rightDataLastFive={rightData.l5_data?.Dataset.Standing ?? []}
+              leftOption={leftOption} rightOption={rightOption}
             />
             <BannerAdExample />
           </div>
 
           {/* Ground Analytics radar chart */}
           <div className="graph-content">
-            <h3>Ground Analytics</h3>
+            <h3 id='ground-chart'>Ground Analytics</h3>
             <GroundRadarchart
               className='Ad-checker'
               leftdata={getDataForOption(leftData, leftOption, 'Ground')}
               rightdata={getDataForOption(rightData, rightOption, 'Ground')}
+              leftDataLastFive={leftData.l5_data?.Dataset.Ground ?? []}
+              rightDataLastFive={rightData.l5_data?.Dataset.Ground ?? []}
+              leftOption={leftOption} rightOption={rightOption}
             />
             <BannerAdExample />
           </div>
@@ -155,8 +184,8 @@ const validateFighterData = (propValue, key) => {
 
 // Declare propTypes to recognize data
 Center.propTypes = {
-  leftObject: PropTypes.Object,
-  rightObject: PropTypes.Object,
+  leftObject: PropTypes.string,
+  rightObject: PropTypes.string,
 };
 
 // Export the Center component as the default export

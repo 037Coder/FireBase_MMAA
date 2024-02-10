@@ -10,7 +10,7 @@ import {
 } from 'chart.js';
 
 // Import color constants
-import { DeepBlue, DeepRed } from "./../../shared/colors";
+import { DeepBlue, DeepRed, LightBlue, LightRed } from "./../../shared/colors";
 
 // Import styles for the StandingRadarchart component
 import './../../stylesheets/Center.css';
@@ -39,21 +39,34 @@ StandingRadarchart.propTypes = {
  * @param {Object} props.rightdata - Data for the right side of the radar chart.
  * @returns {JSX.Element} The rendered StandingRadarchart component.
  */
-function StandingRadarchart({ leftdata=[], rightdata=[] }) {
+function StandingRadarchart({
+    leftdata = [], rightdata = [],
+    leftDataLastFive = [], rightDataLastFive = [],
+    leftOption = '', rightOption = '' }) {
     // Radar chart data configuration for standing analytics
     const data = {
         labels: ['KD Rat', 'HEAD Suc', 'HEAD Def', 'SS Suc', 'SS Rat', 'SS Def', 'DIS Def', 'DIS Suc'],
         datasets: [{
-            label: '',
-            data: leftdata,
+            label: 'Last 5',
+            data: leftDataLastFive,
             backgroundColor: DeepRed,
             borderColor: DeepRed
-        }, {
-            label: '',
-            data: rightdata,
+          }, {
+            label: 'Last 5',
+            data: rightDataLastFive,
             backgroundColor: DeepBlue,
             borderColor: DeepBlue
-        }]
+          }, {
+            label: leftOption,
+            data: leftdata,
+            backgroundColor: LightRed,
+            borderColor: LightRed
+          }, {
+            label: rightOption,
+            data: rightdata,
+            backgroundColor: LightBlue,
+            borderColor: LightBlue
+          }]
     };
 
     // Radar chart options configuration

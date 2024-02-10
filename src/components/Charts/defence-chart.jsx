@@ -9,7 +9,7 @@ import {
 } from 'chart.js';
 
 // Import color constants
-import { DeepBlue, DeepRed } from "./../../shared/colors";
+import { DeepBlue, DeepRed, LightBlue, LightRed } from "./../../shared/colors";
 
 // Import styles for the DefenceRadarchart component
 import './../../stylesheets/Center.css';
@@ -38,21 +38,34 @@ DefenceRadarchart.propTypes = {
  * @param {Object} props.rightdata - Data for the right side of the radar chart.
  * @returns {JSX.Element} The rendered DefenceRadarchart component.
  */
-function DefenceRadarchart({ leftdata=[], rightdata=[] }) {
+function DefenceRadarchart({
+    leftdata = [], rightdata = [],
+    leftDataLastFive = [], rightDataLastFive = [],
+    leftOption = '', rightOption = '' }) {
     // Radar chart data configuration
     const data = {
         labels: ['SigStr', 'Head', 'Body', 'Legs', 'Ttl', 'Distance', 'Clinch', 'Ground'],
         datasets: [{
-            label: '',
-            data: leftdata,
+            label: 'Last 5',
+            data: leftDataLastFive,
             backgroundColor: DeepRed,
             borderColor: DeepRed
-        }, {
-            label: '',
-            data: rightdata,
+          }, {
+            label: 'Last 5',
+            data: rightDataLastFive,
             backgroundColor: DeepBlue,
             borderColor: DeepBlue
-        }]
+          }, {
+            label: leftOption,
+            data: leftdata,
+            backgroundColor: LightRed,
+            borderColor: LightRed
+          }, {
+            label: rightOption,
+            data: rightdata,
+            backgroundColor: LightBlue,
+            borderColor: LightBlue
+          }]
     };
 
     // Radar chart options configuration

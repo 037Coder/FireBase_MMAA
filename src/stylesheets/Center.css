@@ -7,8 +7,8 @@
     background-color: black;
     background-position: center;
     background-attachment: fixed;
-    background-size:contain;
-    background-repeat:no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .graph-container {
@@ -59,47 +59,19 @@ canvas {
     margin: 0;
 }
 
-.record_box {
-    display: block;
-    margin: auto;
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Black Ops One';
-    font-size: 3vw;
-    padding-bottom: 0.75vh;
-}
-
-.name_box {
-    display: block;
-    margin: auto;
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Black Ops One';
-    font-size: 3vw;
-    line-height: 0.7em;
-    text-align: center;
-    width: 50%;
-    padding-bottom: 0.7vh;
-}
-
-.infobox-container {
-    width: 100%;
-}
-
-.box-container {
-    display: flex;
-    flex-direction: row;
-    min-width: 100%;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
-    padding-top: 1em;
-}
-
-#lBox {
-    color: #b22828;
-}
-
-#rBox {
-    color: #1e3a5f;
+#scroll-up {
+    min-height: 55px;
+    min-width: 55px;
+    max-height: 65px;
+    max-width: 65px;
+    background-color: #3a8869;
+    border-radius: 100%;
+    box-shadow: 0px 5px 5px black;
+    position: absolute;
+    z-index: 50;
+    float: left;
+    bottom: 10px;
+    opacity: 75%;
+    padding: auto;
+    border: 1px solid white;
 }

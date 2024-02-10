@@ -1,0 +1,71 @@
+
+.record_box {
+    display: block;
+    margin: auto;
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Black Ops One';
+    font-size: 3vw;
+    padding-bottom: 0.75vh;
+    text-align: center;
+}
+
+.name_box {
+    display: block;
+    margin: auto;
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Black Ops One';
+    font-size: 2.5vw;
+    line-height: 0.7em;
+    text-align: center;
+}
+
+.infobox-container {
+    width: 100%;
+    text-align: center;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    padding-top: 1em;
+}
+
+#lBox {
+    color: #b22828;
+}
+
+#rBox {
+    color: #1e3a5f;
+}
+
+.title-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h4{
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    padding-top: 1em;
+}
+
+#info-table{
+    width: 100%;
+}
+
+/* Set equal width for each column */
+td:first-child,
+td:last-child {
+  width: 50%;
+}

@@ -7,6 +7,7 @@ import SearchRight from './Search-Right';
 import Center from './Center';
 import ListAllObjects from '../../utils/BucketList';
 import { Link } from 'react-router-dom';
+import ChartMenu from '../Charts/ChartMenu';
 
 
 /**
@@ -68,18 +69,18 @@ const Main = () => {
 
       {/* Middle section of the main container */}
       <div className='middle'>
-        <h1 className="appTitle">MMA Analytica</h1>
+        <h1 className="appTitle" id='top'>MMA Analytica</h1>
         <p className="subInfo">Please read our
           <Link to='/disclaimer'> disclaimer </Link>
           page.
         </p>
         <p className='subInfo'>For more information on the datapoints see our
-          <Link to='/calculations'> calculations </Link>
+          <Link to='/'> calculations </Link>
           page.
         </p>
         {/*<NameList onNamesLoaded={handleNamesLoaded} />*/}
         <ListAllObjects onNamesLoaded={handleNamesLoaded} />
-
+        <ChartMenu/>
         <Center
           rightObject={rightObject}
           leftObject={leftObject}
