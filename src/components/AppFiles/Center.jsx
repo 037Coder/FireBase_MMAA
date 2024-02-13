@@ -1,16 +1,12 @@
 // Import necessary components and stylesheets
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import OverallRadarchart from '../Charts/overall-chart';
-import SuccessRadarchart from '../Charts/success-chart';
-import DefenceRadarchart from '../Charts/defence-chart';
-import RatioRadarchart from '../Charts/ratio-chart';
-import StandingRadarchart from '../Charts/standing-chart';
-import GroundRadarchart from '../Charts/ground-chart';
+import DataTable from '../Charts/DataTable';
 import InfoBox from '../Charts/info-box';
 import BannerAdExample from '../Ads/Banner-Adspace';
 import ad from './../../Ad_Example.png'
-import { FaArrowUp, FaArrowCircleUp } from 'react-icons/fa';
+import { FaArrowUp } from 'react-icons/fa';
+import DataChart from '../Charts/DataChart';
 
 /**
  * Functional component representing the central content of the application.
@@ -60,7 +56,7 @@ const Center = ({ leftObject, rightObject, leftOption, rightOption }) => {
       <a href='#top'>
         <div id='scroll-up'>
           <FaArrowUp style={
-            { 
+            {
               color: 'white',
               fontSize: '55px'
             }} />
@@ -72,6 +68,8 @@ const Center = ({ leftObject, rightObject, leftOption, rightOption }) => {
         <div className="graph-content-list">
           {/* InfoBox component displaying information about the data */}
           <div className="graph-content" ref={centerRef} id='info'>
+
+
             <InfoBox
               leftdata={leftData} rightdata={rightData}
               leftOption={leftOption} rightOption={rightOption}
@@ -82,7 +80,7 @@ const Center = ({ leftObject, rightObject, leftOption, rightOption }) => {
           {/* Overall Analytics radar chart */}
           <div className="graph-content">
             <h3 id='overall-chart'>Overall Analytics</h3>
-            <OverallRadarchart
+            <DataChart chartName='Overall'
               className='Ad-checker'
               leftdata={getDataForOption(leftData, leftOption, 'Overall')}
               rightdata={getDataForOption(rightData, rightOption, 'Overall')}
@@ -92,53 +90,10 @@ const Center = ({ leftObject, rightObject, leftOption, rightOption }) => {
             />
             <BannerAdExample />
           </div>
-
-          {/* Success Analytics radar chart */}
-          <div className="graph-content">
-            <h3 id='success-chart'>Success Analytics</h3>
-            <SuccessRadarchart
-              className='Ad-checker'
-              leftdata={getDataForOption(leftData, leftOption, 'Attack')}
-              rightdata={getDataForOption(rightData, rightOption, 'Attack')}
-              leftDataLastFive={leftData.l5_data?.Dataset.Attack ?? []}
-              rightDataLastFive={rightData.l5_data?.Dataset.Attack ?? []}
-              leftOption={leftOption} rightOption={rightOption}
-            />
-            <BannerAdExample />
-          </div>
-
-          {/* Defence Analytics radar chart */}
-          <div className="graph-content">
-            <h3 id='defence-chart'>Defence Analytics</h3>
-            <DefenceRadarchart
-              className='Ad-checker'
-              leftdata={getDataForOption(leftData, leftOption, 'Defence')}
-              rightdata={getDataForOption(rightData, rightOption, 'Defence')}
-              leftDataLastFive={leftData.l5_data?.Dataset.Defence ?? []}
-              rightDataLastFive={rightData.l5_data?.Dataset.Defence ?? []}
-              leftOption={leftOption} rightOption={rightOption}
-            />
-            <BannerAdExample />
-          </div>
-
-          {/* Ratio Analytics radar chart */}
-          <div className="graph-content">
-            <h3 id='ratio-chart'>Ratio Analytics</h3>
-            <RatioRadarchart
-              className='Ad-checker'
-              leftdata={getDataForOption(leftData, leftOption, 'Ratio')}
-              rightdata={getDataForOption(rightData, rightOption, 'Ratio')}
-              leftDataLastFive={leftData.l5_data?.Dataset.Ratio ?? []}
-              rightDataLastFive={rightData.l5_data?.Dataset.Ratio ?? []}
-              leftOption={leftOption} rightOption={rightOption}
-            />
-            <BannerAdExample />
-          </div>
-
           {/* Standing Analytics radar chart */}
           <div className="graph-content">
             <h3 id='standing-chart'>Standing Analytics</h3>
-            <StandingRadarchart
+            <DataChart chartName='Standing'
               className='Ad-checker'
               leftdata={getDataForOption(leftData, leftOption, 'Standing')}
               rightdata={getDataForOption(rightData, rightOption, 'Standing')}
@@ -152,7 +107,7 @@ const Center = ({ leftObject, rightObject, leftOption, rightOption }) => {
           {/* Ground Analytics radar chart */}
           <div className="graph-content">
             <h3 id='ground-chart'>Ground Analytics</h3>
-            <GroundRadarchart
+            <DataChart chartName='Ground'
               className='Ad-checker'
               leftdata={getDataForOption(leftData, leftOption, 'Ground')}
               rightdata={getDataForOption(rightData, rightOption, 'Ground')}
@@ -162,6 +117,49 @@ const Center = ({ leftObject, rightObject, leftOption, rightOption }) => {
             />
             <BannerAdExample />
           </div>
+          {/* Success Analytics radar chart */}
+          <div className="graph-content">
+            <h3 id='success-chart'>Success Analytics</h3>
+            <DataTable
+              leftdata={getDataForOption(leftData, leftOption, 'Attack')}
+              rightdata={getDataForOption(rightData, rightOption, 'Attack')}
+              leftDataLastFive={leftData.l5_data?.Dataset.Attack ?? []}
+              rightDataLastFive={rightData.l5_data?.Dataset.Attack ?? []}
+              leftOption={leftOption} rightOption={rightOption}
+            />
+
+            <BannerAdExample />
+          </div>
+
+          {/* Defence Analytics radar chart */}
+          <div className="graph-content">
+            <h3 id='defence-chart'>Defence Analytics</h3>
+            <DataTable
+              leftdata={getDataForOption(leftData, leftOption, 'Defence')}
+              rightdata={getDataForOption(rightData, rightOption, 'Defence')}
+              leftDataLastFive={leftData.l5_data?.Dataset.Defence ?? []}
+              rightDataLastFive={rightData.l5_data?.Dataset.Defence ?? []}
+              leftOption={leftOption} rightOption={rightOption}
+            />
+
+            <BannerAdExample />
+          </div>
+
+          {/* Ratio Analytics radar chart */}
+          <div className="graph-content">
+            <h3 id='ratio-chart'>Ratio Analytics</h3>
+            <DataTable
+              leftdata={getDataForOption(leftData, leftOption, 'Ratio')}
+              rightdata={getDataForOption(rightData, rightOption, 'Ratio')}
+              leftDataLastFive={leftData.l5_data?.Dataset.Ratio ?? []}
+              rightDataLastFive={rightData.l5_data?.Dataset.Ratio ?? []}
+              leftOption={leftOption} rightOption={rightOption}
+            />
+
+            <BannerAdExample />
+          </div>
+
+
         </div>
       </div>
     </div>

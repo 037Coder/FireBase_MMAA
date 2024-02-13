@@ -24,11 +24,14 @@ const Calculations = () => {
             <div className="information-section" id="calc-page">
                 <h1>Calculations</h1>
                 <h2>Data Source</h2>
-                <p><Link to={'http://ufcstats.com/statistics/events/completed'}>UFCstats.com</Link>: Information about fighters and their last 5 fights is scraped
-                    from the official UFC website.
+                <p><Link to={'http://ufcstats.com/statistics/events/completed'}>UFCstats.com</Link>: 
+                    The Official UFC statistics website.
                 </p>
                 <Spacer />
                 <img className="hero" src="https://firebasestorage.googleapis.com/v0/b/mmaanalyticawebapplication.appspot.com/o/MMAA_Media%2FMMAA_Calculator.png?alt=media&token=95ef15eb-9d09-46f3-b9df-5ea2f3a4fff6"></img>
+                <h2>Charts:</h2>
+                <h3>Labels</h3>
+                <MiniSpacer />
                 <h2>Data Points:</h2>
                 <h3>Labels</h3>
                 <MiniSpacer />

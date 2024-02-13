@@ -37,51 +37,49 @@ const Home = () => {
                 <Spacer />
 
 
-                <h2>Head to Head comparisons</h2>
+                <h2>Empower Your Analysis with the Ultimate UFC Stats and
+                    Fighter Data Tool</h2>
                 <p>
-                    <strong>MMAAnalytica: (MMAA)</strong> Select any two UFC
-                    fighters, dive into their last 5 fights, and explore key data
-                    points to gain unparalleled insights.
+                    <strong>Discover the Power of MMAAnalytica: (MMAA)</strong>
+                    Dive into the last 5 fights of UFC fighters,
+                    analyze key data points, and gain unparalleled insights
+                    – all with the ultimate tool in combat sports analysis.
                 </p>
 
                 <Spacer />
                 <h2>What Sets MMAAnalytica Apart?</h2>
                 <p>
-                    <strong>Form Over Career Statistics: </strong>
-                    We prioritize a fighter's recent performance, focusing on the
-                    last 5 fights to provide a real-time snapshot of their
-                    abilities.
+                    <strong>Harnessing the Power of Data: </strong>
+                    Prioritizing recent performance over career statistics,
+                    we provide a real-time snapshot of fighter abilities,
+                    ensuring you're always ahead in your analysis.
                 </p>
                 <p>
-                    <strong>Compare Fighters: </strong>
-                    Compare athlete form statistics with their peers and the legends.
+                    <strong>Compare Fighters Like Never Before: </strong>
+                    Utilize our powerful tool for in-depth comparisons of
+                    athlete form statistics alongside their peers and legends.
                 </p>
-                <Spacer />
-                <h2>For Pundits, Fans, Athletes, and Coaches</h2>
-                <p>
-                    Whether you're a passionate fan, a seasoned pundit,
-                    an aspiring athlete, or a dedicated coach, <strong>MMAAnalytica</strong> is
-                    your go-to platform for informed analysis in combat sports.
-                </p>
+
                 <Spacer />
                 <h2>Key Features:</h2>
-                <p><strong>Fighter Ratio Analysis: </strong>
-                    Explore success and defense ratios specific to the last 5
-                    fights.</p>
-                <p><strong>Dynamic Data Visualization: </strong>
-                    Engage with intuitive graphs and visuals for a
-                    comprehensive understanding.</p>
-                <Spacer />
-                <h2>How You Can Support MMAAnalytica:</h2>
                 <p>
-                    <strong>Explore <Link to="/mmaa">the App</Link>: </strong>
-                    Dive into the world of MMA analysis by checking out our app.
+                    <strong>Fighter Ratio Analysis: </strong>
+                    Delve into success and defense ratios specific
+                    to the last 5 fights, all fights, or last 3 years;
+                    maximizing your insight.
                 </p>
-                {/*
-                <p>    <strong>Support on IndieGogo: </strong>
-                    Support our mission on INDIEGOGO. Your contributions help us enhance and expand our offerings.
-                </p> 
-                */}
+                <p>
+                    <strong>Dynamic Data Visualization: </strong>
+                    EEngage with intuitive graphs and visuals for a
+                    comprehensive understanding of fighter performance.
+                </p>
+                <Spacer />
+                <h2>How You Can Leverage MMAAnalytica:</h2>
+                <p>
+                    <strong>Harness the Power of Our Tool:</strong>
+                    <strong> Explore <Link to="/mmaa">the App</Link></strong>;
+                    or <a href='https://twitter.com/mmaanalytica' >follow us on X.</a>
+                </p>
                 <Spacer />
                 {/* Display the logo button */}
                 <LogoButton />

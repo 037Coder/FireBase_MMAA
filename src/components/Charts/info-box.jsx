@@ -25,7 +25,6 @@ function InfoBox({ leftdata = {}, rightdata = {}, leftOption, rightOption }) {
     const allFightsString = "All Fights", last3String = 'Last 3 Years'
 
     function noOfFights(record) {
-        console.log(record)
         var totalFights = 0
         // Splitting the record string into wins, losses, draws, and non-contests
         if (record) {

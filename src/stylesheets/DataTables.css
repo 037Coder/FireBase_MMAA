@@ -1,0 +1,73 @@
+.data-table {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.data-table-head {
+    font-weight: bold;
+    text-transform:uppercase;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.data-table-label {
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.data-table-body {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.right-table-data {
+    align-items: left;
+}
+
+.left-table-data {
+    align-items: right;
+}
+
+.left-l5-label, 
+.right-l5-label, 
+.left-option-label, 
+.right-option-label{padding: 2px;}
+ 
+.left-l5-data {
+    text-align: right;
+    float: right;
+    color: white;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+.right-l5-data {
+    text-align: left;
+    float: left;
+    color: white;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+.left-option-data {
+    text-align: right;
+    float: right;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+.right-option-data {
+    text-align: left;
+    float: left;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+
+span {
+    display: block;
+}

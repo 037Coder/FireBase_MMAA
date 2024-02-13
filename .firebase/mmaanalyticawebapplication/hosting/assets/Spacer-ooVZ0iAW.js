@@ -1,0 +1,1 @@
+import{j as s}from"./index-hNFxBchI.js";const a=()=>s.jsx("footer",{children:s.jsx("div",{className:"legal-info",children:s.jsx("p",{className:"legal-info-text",children:"Copyright 2024 MMAAnalytica.com LLC."})})}),r=()=>s.jsx("div",{className:"spacer"}),c=()=>s.jsx("div",{className:"mini-spacer"});export{a as F,c as M,r as S};
